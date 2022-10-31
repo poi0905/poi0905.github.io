@@ -31,18 +31,18 @@ tags:   SQL
 |`count(DISTINCT column_name)`    | number of different non-`NULL` values|   
 |`SELECT DISTINCT column_name ...`| distinct values, including `NULL`    | 
 
-{% highlight ruby %}
+{% highlight SQL %}
 SELECT *
     FROM company;
 LIMIT 5
 {% endhighlight %}
 
-{% highlight ruby %}
+{% highlight SQL %}
 SELECT count(*) - count(ticker) AS missing
   FROM fortune500;
 {% endhighlight %}
 
-{% highlight ruby %}
+{% highlight SQL %}
 SELECT company.name 
 -- Table(s) to select from
   FROM company 

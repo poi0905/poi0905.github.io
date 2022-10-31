@@ -24,13 +24,13 @@ instagram: https://instagram.com/poi_0905 # Add your Instagram handle
 
 #-------------------------------
 # Comment Section (Disqus)
-disqus-identifier: mr-brown # add your shortname for Disqus Comment. For example mr-brown
+disqus-identifier: poi0905 # add your shortname for Disqus Comment. For example mr-brown
 
 
 #-------------------------------
 # Instagram Feed
-instafeed: # To enable the instafeed, use the value true. To turn off use the value false.
-instagram-profile: artemsheludko_ # Add instagram username
+# instafeed: # To enable the instafeed, use the value true. To turn off use the value false.
+# instagram-profile: artemsheludko_ # Add instagram username
 
 
 #-------------------------------
