@@ -1,9 +1,10 @@
 ---
 layout: post
-title: Pandas常用語法
+title:  Pandas常用語法
 summary: 資料科學中最基礎的功夫!
-featured-img: pandas
-categories: [Python]
+date:   2021-07-18 18:05:55 +0800
+image:  pandas.jpg
+tags:   Python
 ---
 
 # 目錄

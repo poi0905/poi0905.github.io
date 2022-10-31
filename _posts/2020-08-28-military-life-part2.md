@@ -1,9 +1,10 @@
 ---
 layout: post
-title: 2020 軍旅生活(下)
+title:  2020 軍旅生活(下)
 summary: 爽拉結束拉!
-featured-img: 當兵合照
-categories: [紀錄]
+date:   2020-08-28 18:05:55 +0800
+image:  當兵合照.jpg
+tags:   紀錄
 ---
 
 

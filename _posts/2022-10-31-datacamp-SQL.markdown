@@ -2,7 +2,7 @@
 layout: post
 title:  SQL for Business Analysts
 date:   2022-10-31 18:05:55 +0800
-image:  10.jpg
+image:  SQL.jpg
 tags:   SQL
 ---
 

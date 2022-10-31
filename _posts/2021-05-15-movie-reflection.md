@@ -1,9 +1,10 @@
 ---
 layout: post
-title: 電影心得
+title:  電影心得
 summary: 沒有架構地寫下自己的想寫的東西
-featured-img: movie
-categories: [心得]
+date:   2021-05-15 18:05:55 +0800
+image:  movie.jpg
+tags:   紀錄
 ---
 
 # 目錄
