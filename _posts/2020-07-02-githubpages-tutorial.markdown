@@ -15,7 +15,7 @@ tags:   教學
 
 如果想要跟著做的可以先參考這[影片](https://www.youtube.com/watch?v=BA_c3bGQXlQ&t=96s)。
 
-<iframe src="https://www.youtube.com/watch?v=BA_c3bGQXlQ&t=96s" frameborder="0" allowfullscreen></iframe>
+<iframe src="https://www.youtube.com/embed/BA_c3bGQXlQ" frameborder="0" allowfullscreen></iframe>
 
 開始變化的地方是影片中的選取主題處，
 
