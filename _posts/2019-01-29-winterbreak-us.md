@@ -13,6 +13,8 @@ tags:   遊記
 
 ***
 
+# 目錄
+
 1. [Day1(1/20)](#Day1(1/20))
 
 2. [Day2(1/21)](#Day2(1/21))
@@ -35,12 +37,9 @@ tags:   遊記
 
 11. [後記](#後記)
 
-***
 
 <a name="Day1(1/20)"/>
 ## Day1(1/20)
- 
-***
 
 首先先去拿 sim 卡~(店員還很兩光給錯張)
 
@@ -122,8 +121,6 @@ Paul 的房間
 <a name="Day2(1/21)"/>
 ## Day2(1/21)
 
-***
-
 早餐 ~
 
 ![image](https://raw.githubusercontent.com/poi0905/blog/master/assets/img/posts/2019.01.us_21.JPEG)
@@ -178,8 +175,6 @@ Shake Shake~吃了才發現我吃過
 <a name="Day3(1/22)"/>
 ## Day3(1/22)
 
-***
-
 今天早上享受一個人在家的時光 ~
 
 ![image](https://raw.githubusercontent.com/poi0905/blog/master/assets/img/posts/2019.01.us_37.JPEG)
@@ -217,8 +212,6 @@ Shake Shake~吃了才發現我吃過
 
 <a name="Day4(1/23)"/>
 ## Day4(1/23)
-
-***
 
 Paul 推的 Bruegger's Bagels
 
@@ -276,8 +269,6 @@ Turtle Mocha
 <a name="Day5(1/24)"/>
 ## Day5(1/24)
 
-***
-
 在 Minnenopolis 的最後一餐 ~ Chipotle 
 
 ![image](https://raw.githubusercontent.com/poi0905/blog/master/assets/img/posts/2019.01.us_63.JPEG)
@@ -302,8 +293,6 @@ Turtle Mocha
 <a name="Day6(1/25)"/>
 ## Day6(1/25)
 
-***
-
 由於 Kuan 白天要上班，所以今天是個耍廢 day。(一個人吃掉冰箱一整個pizza)
 
 ![image](https://raw.githubusercontent.com/poi0905/blog/master/assets/img/posts/2019.01.us_68.JPEG)
@@ -319,8 +308,6 @@ Turtle Mocha
 
 <a name="Day7(1/26)"/>
 ## Day7(1/26)
-
-***
 
 午餐 ~ Portillo's
 
@@ -346,8 +333,6 @@ Turtle Mocha
 <a name="Day8(1/27)"/>
 ## Day8(1/27)
 
-***
-
 去 Kuan 工作的咖啡廳坐坐
 
 ![image](https://raw.githubusercontent.com/poi0905/blog/master/assets/img/posts/2019.01.us_76.JPEG)
@@ -368,8 +353,6 @@ Masala Chai Tea Latte ~ 好喝!肉桂味很香
 <a name="Day9(1/28)"/>
 ## Day9(1/28)
 
-***
-
 今天也是耍廢整天，喔對了有看 black mirror 啦，看完蠻有啟示的。
 
 晚餐 ~ Chick-fil-A
@@ -386,8 +369,6 @@ Masala Chai Tea Latte ~ 好喝!肉桂味很香
 <a name="Day10(1/29)"/>
 ## Day10(1/29)
 
-***
-
 最後一天 ~ 最後一餐 ~ 超讚
 
 ![image](https://raw.githubusercontent.com/poi0905/blog/master/assets/img/posts/2019.01.us_83.JPEG)
@@ -401,8 +382,6 @@ Masala Chai Tea Latte ~ 好喝!肉桂味很香
 
 <a name="後記"/>
 # 後記
-
-***
 
 由於本人老爸在航空公司上班的關係，我去美國的機票不用錢，美國國內線只要一折(雖然要 stand by)。Stand by 的風險是搭不上飛機，但我是覺得我時間超多，錢省到最重要。最後 stand by 都有讓我順利搭上XD。
 

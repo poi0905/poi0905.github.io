@@ -19,8 +19,6 @@ tags:   Python
 
 # 目錄
 
-0. [前言](#前言)
-
 1. [Transforming Data](#1)
 
 2. [Aggregating Data](#2)
@@ -38,8 +36,6 @@ tags:   Python
 
 <a name="1"/>
 # Transforming Data
-
-***
 
 *Intro of df*
 - df.head()  # 看前五rows
@@ -70,8 +66,6 @@ dogs[condition]  # only brown, black, tan dog
 
 <a name="2"/>
 # Aggregating Data
-
-***
 
 *Summary statistics*
 - df["column"].mean()  # 取那個col的平均，類似的有max/min/median
@@ -119,8 +113,6 @@ print(sales[["temperature_c", "fuel_price_usd_per_l", "unemployment"]].agg([iqr,
 <a name="3"/>
 # Slicing and Indexing
 
-***
-
 *Setting Index*
 - df.index = list  # 把df的index換成list裡面的element
     - pd_ind = pd.set_index("name")  # 設定index，此處把name當作index
@@ -160,8 +152,6 @@ print(sales[["temperature_c", "fuel_price_usd_per_l", "unemployment"]].agg([iqr,
 
 <a name="4"/>
 # Creating and Visualizing DataFrames
-
-***
 
 *Using matplotlib.pyplot to visualize*
 - df["column1"].hist()  # histograms(**要先group完!!!**)
@@ -217,8 +207,6 @@ newfile.to_csv("newfile.csv")
 
 <a name="5"/>
 # Data Merging
-
-***
 
 *inner join*
 - df1.merge(df2, on='**common**')  # on 是用在兩個df交集的地方，u**也就是共同部分**
@@ -354,8 +342,6 @@ id
 <a name="6"/>
 # Advanced Merging and Concatenating
 
-***
-
 *Filtering joins*
 - semi-join:
     - returns the intersection
@@ -455,8 +441,6 @@ pd.concat([inv_feb, inv_mar], verify_integrity=False)
 
 <a name="7"/>
 # Merging Ordered and Time-Series Data
-
-***
 
 *merge_ordered()*
 - 適合用在有時間相關的資料

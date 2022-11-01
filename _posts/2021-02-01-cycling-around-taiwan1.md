@@ -19,8 +19,6 @@ tags:   紀錄
 
 # 目錄
 
-0. [前言](#前言)
-
 1. [Day1](#Day1)
 
 2. [Day2](#Day2)
@@ -34,8 +32,6 @@ tags:   紀錄
 
 <a name="Day1"/>
 # 📍Day1-2021/01/29
-
-***
 
 ![image](https://raw.githubusercontent.com/poi0905/blog/master/assets/img/posts/環島day1路線.png)
 
@@ -57,8 +53,6 @@ tags:   紀錄
 
 <a name="Day2"/>
 # 📍Day2-2021/01/30
-
-***
 
 ![image](https://raw.githubusercontent.com/poi0905/blog/master/assets/img/posts/環島day2路線.png)
 
@@ -93,8 +87,6 @@ tags:   紀錄
 
 <a name="Day3"/>
 # 📍Day3-2021/01/31
-
-***
 
 ![image](https://raw.githubusercontent.com/poi0905/blog/master/assets/img/posts/環島day3路線.png)
 
@@ -141,8 +133,6 @@ tags:   紀錄
 <a name="Day4"/>
 # 📍Day4-2021/02/01
 
-***
-
 ![image](https://raw.githubusercontent.com/poi0905/blog/master/assets/img/posts/環島day4路線.png)
 
 最後一天的路程蠻輕鬆的，就是沿著海岸騎回淡水，完成一整圈的成就，再騎回宿舍。過程中有踩台灣本島極東點三貂角與極北點富貴角，順便去金山老街逛逛。其實最後騎回到淡水時也是剛好太陽下山，真的是蠻幸運的，就用那美麗的夕陽結束我們的環島遊!
@@ -164,8 +154,6 @@ tags:   紀錄
 
 <a name="結語"/>
 # 結語
-
-***
 
 ## 旅行是什麼?
 

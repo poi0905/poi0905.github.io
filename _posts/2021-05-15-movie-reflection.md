@@ -22,8 +22,6 @@ tags:   紀錄
 <a name="風起"/>
 # 風起
 
-***
-
 ![image](https://raw.githubusercontent.com/poi0905/blog/master/assets/img/posts/movie1.jpg)
 
 -觀看日期:2020/05/03
@@ -35,8 +33,6 @@ tags:   紀錄
 
 <a name="靈魂急轉彎"/>
 # 靈魂急轉彎
-
-***
 
 ![image](https://raw.githubusercontent.com/poi0905/blog/master/assets/img/posts/movie2.png)
 
@@ -55,8 +51,6 @@ tags:   紀錄
 
 <a name="刺激1995"/>
 # 刺激1995
-
-***
 
 ![image](https://raw.githubusercontent.com/poi0905/blog/master/assets/img/posts/movie3.jpg)
 
