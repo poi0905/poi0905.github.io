@@ -52,6 +52,31 @@ SELECT company.name
        ON company.ticker=fortune500.ticker;
 {% endhighlight %}
 
+{% highlight SQL %}
+SELECT *
+  FROM price;
+{% endhighlight %}
+
+|column_1   |  column_2   |   
+|-----------|-------------|
+|           | 10          |
+|           |             | 
+|       22  |             |
+|        3  | 4           |
+
+{% highlight SQL %}
+SELECT coalesce(column_1, column_2)
+  FROM price;
+{% endhighlight %}
+
+|coalesce   | 
+|-----------|
+|       10  |
+|           |             
+|       22  | 
+|        3  | 
+
+
 ## Summarizing and aggregating numeric data
 ## Exploring categorical data and unstructured text
 ## Working with dates and timestamps
