@@ -7,9 +7,17 @@ image:  pandas.jpg
 tags:   Python
 ---
 
-# 目錄
+最近在一個以資料科學為主的程式教學平台[datacamp](https://learn.datacamp.com)學習，
+
+寫這篇文章一方面分享學習筆記，
+
+也讓自己未來在操作時有地方翻語法。
+
+[這裡](https://drive.google.com/file/d/1AE_XEhAtSxRu0QnMmnKmUP1bOUYEWVdT/view?usp=sharing)回憶一下matplotlib和dict等的扣。
 
 ***
+
+# 目錄
 
 0. [前言](#前言)
 
@@ -26,20 +34,6 @@ tags:   Python
 6. [Advanced Merging and Concatenating](#6)
 
 7. [Merging Ordered and Time-Series Data](#7)
-
-
-<a name="前言"/>
-# 前言
-
-***
-
-最近在一個以資料科學為主的程式教學平台[datacamp](https://learn.datacamp.com)學習，
-
-寫這篇文章一方面分享學習筆記，
-
-也讓自己未來在操作時有地方翻語法。
-
-[這裡](https://drive.google.com/file/d/1AE_XEhAtSxRu0QnMmnKmUP1bOUYEWVdT/view?usp=sharing)回憶一下matplotlib和dict等的扣。
 
 
 <a name="1"/>

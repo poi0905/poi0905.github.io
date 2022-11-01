@@ -7,10 +7,6 @@ image:  emile-perron-190221.jpg
 tags:   教學
 ---
 
-# 前言
-
-***
-
 其實youtube上已經有許多影片分享如何製作github pages，
 
 如果想要跟著做的可以先參考這[影片](https://www.youtube.com/watch?v=BA_c3bGQXlQ&t=96s)。
