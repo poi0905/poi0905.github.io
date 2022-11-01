@@ -44,9 +44,10 @@ FROM employees;
 {% endhighlight %}
 
 {% highlight SQL %}
-CREATE VIEW employee_hire_years AS
-SELECT id, name, year_hired
-FROM employees;
+-- Save the results of this query as a view called library_authors
+CREATE VIEW library_authors AS
+SELECT DISTINCT author AS unique_author
+FROM books;
 {% endhighlight %}
 
 <a name="2"/>
