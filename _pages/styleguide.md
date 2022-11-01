@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Tag
-permalink: /tag_page/
+permalink: /_tag-page/
 image: 08.jpg
 ---
 
