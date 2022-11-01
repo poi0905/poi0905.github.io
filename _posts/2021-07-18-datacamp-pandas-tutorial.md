@@ -4,7 +4,8 @@ title:  Pandas常用語法
 summary: 資料科學中最基礎的功夫!
 date:   2021-07-18 18:05:55 +0800
 image:  pandas.jpg
-tags:   Python
+# tags:   Python
+categories: [Python]
 ---
 
 最近在一個以資料科學為主的程式教學平台[datacamp](https://learn.datacamp.com)學習，

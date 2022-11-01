@@ -4,7 +4,8 @@ title:  2020 軍旅生活(下)
 summary: 爽拉結束拉!
 date:   2020-08-28 18:05:55 +0800
 image:  當兵合照.jpg
-tags:   紀錄
+# tags:   紀錄
+categories: [紀錄]
 ---
 
 

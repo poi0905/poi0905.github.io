@@ -4,7 +4,8 @@ title:  2021.01 環島I
 summary: 一個說走就走的旅行!
 date:   2021-02-01 18:05:55 +0800
 image:  裝逼照.jpg
-tags:   紀錄
+# tags:   遊記
+categories: [遊記]
 ---
 
 ## 說走就走，其實沒有那麼恐怖

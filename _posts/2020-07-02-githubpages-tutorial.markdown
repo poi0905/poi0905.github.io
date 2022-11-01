@@ -4,7 +4,8 @@ title:  如何用 Github Pages 製作屬於自己的部落格
 summary: 這篇文章將分享如何用 Github Pages 來做屬於自己的部落格(也怕自己以後忘記...)
 date:   2020-07-02 18:05:55 +0800
 image:  emile-perron-190221.jpg
-tags:   教學
+# tags:   教學
+categories: [教學]
 ---
 
 其實youtube上已經有許多影片分享如何製作github pages，
