@@ -23,128 +23,129 @@ categories: [SQL]
 <a name="1"/>
 # Introduction to SQL
 
-## Relational Databases
+*   ## Relational Databases
 
-*   SQL, short for Structured Query Language
-*   The field names should be made singular
-*   The table name should not be capitalized
-*   Schemas: "blueprints" of databases
-*   `VARCHAR` is a flexible and popular string data type in SQL
+    *   SQL, short for Structured Query Language
+    *   The field names should be made singular
+    *   The table name should not be capitalized
+    *   Schemas: "blueprints" of databases
+    *   `VARCHAR` is a flexible and popular string data type in SQL
 
-## Querying
+*   ## Querying
 
-{% highlight SQL %}
-SELECT *
-FROM company;
-{% endhighlight %}
+    {% highlight SQL %}
+    SELECT *
+    FROM company;
+    {% endhighlight %}
 
-{% highlight SQL %}
-SELECT DISTINCT year_hired
-FROM employees;
-{% endhighlight %}
+    {% highlight SQL %}
+    SELECT DISTINCT year_hired
+    FROM employees;
+    {% endhighlight %}
 
-{% highlight SQL %}
--- Save the results of this query as a view called library_authors
-CREATE VIEW library_authors AS
-SELECT DISTINCT author AS unique_author
-FROM books;
-{% endhighlight %}
+    {% highlight SQL %}
+    -- Save the results of this query as a view called library_authors
+    CREATE VIEW library_authors AS
+    SELECT DISTINCT author AS unique_author
+    FROM books;
+    {% endhighlight %}
 
-**PostgreSQL**   
-*   Free and open-source relational database system
-*   Created at UCB
-*   "PostgreSQL" refers to both the PostgreSQL database system and its associated SQL flavor
+    **PostgreSQL**
 
-**SQL**
-*   Has free and paid versions
-*   Created by Microsoft
-*   T-SQL is Microsoft's SQL flavor, used with SQL Server databases
+    *   Free and open-source relational database system
+    *   Created at UCB
+    *   "PostgreSQL" refers to both the PostgreSQL database system and its associated SQL flavor
 
-{% highlight SQL %}
--- Select the first 10 genres from books using PostgreSQL
-SELECT genre
-FROM books
-LIMIT 10;
-{% endhighlight %}
+    **SQL**
+    *   Has free and paid versions
+    *   Created by Microsoft
+    *   T-SQL is Microsoft's SQL flavor, used with SQL Server databases
+
+    {% highlight SQL %}
+    -- Select the first 10 genres from books using PostgreSQL
+    SELECT genre
+    FROM books
+    LIMIT 10;
+    {% endhighlight %}
 
 <a name="2"/>
 # Intermediate SQL
 
-## Selecting Data
+*   ## Selecting Data
 
-{% highlight SQL %}
-SELECT COUNT(DISTINCT(country)) AS count_distinct_countries
-FROM films;
-{% endhighlight %}
+    {% highlight SQL %}
+    SELECT COUNT(DISTINCT(country)) AS count_distinct_countries
+    FROM films;
+    {% endhighlight %}
 
-[Style guide](https://www.sqlstyle.guide/)
+    [Style guide](https://www.sqlstyle.guide/)
 
-## Filtering Records
-## Aggregate Functions
-## Sorting and Grouping
+*   ## Filtering Records
+*   ## Aggregate Functions
+*   ## Sorting and Grouping
 
 <a name="3"/>
 # Joining Data in SQL
 
-## Introducing Inner Joins
+*   ## Introducing Inner Joins
 
-*When writing joins, many SQL users prefer to write the SELECT statement after writing the join code, in case the SELECT statement requires using table aliases.*
+    *When writing joins, many SQL users prefer to write the SELECT statement after writing the join code, in case the SELECT statement requires using table aliases.*
 
-{% highlight SQL %}
--- Select fields with aliases
-SELECT c.code AS country_code, name, year, inflation_rate
-FROM countries AS c
--- Join to economies (alias e)
-INNER JOIN economies AS e
--- Match on code field using table aliases
-ON c.code = e.code;
-{% endhighlight %}
+    {% highlight SQL %}
+    -- Select fields with aliases
+    SELECT c.code AS country_code, name, year, inflation_rate
+    FROM countries AS c
+    -- Join to economies (alias e)
+    INNER JOIN economies AS e
+    -- Match on code field using table aliases
+    ON c.code = e.code;
+    {% endhighlight %}
 
-*Recall that when both the field names being joined on are the same, you can take advantage of the `USING` clause.*
+    *Recall that when both the field names being joined on are the same, you can take advantage of the `USING` clause.*
 
-{% highlight SQL %}
-SELECT c.name AS country, l.name AS language, official
-FROM countries AS c
-INNER JOIN languages AS l
--- Match using the code column
-USING(code);
-{% endhighlight %}
+    {% highlight SQL %}
+    SELECT c.name AS country, l.name AS language, official
+    FROM countries AS c
+    INNER JOIN languages AS l
+    -- Match using the code column
+    USING(code);
+    {% endhighlight %}
 
-{% highlight SQL %}
-SELECT name, e.year, fertility_rate, unemployment_rate
-FROM countries AS c
-INNER JOIN populations AS p
-ON c.code = p.country_code
-INNER JOIN economies AS e
-ON c.code = e.code
--- Add an additional joining condition such that you are also joining on year
-	AND e.year = p.year;
-{% endhighlight %}
+    {% highlight SQL %}
+    SELECT name, e.year, fertility_rate, unemployment_rate
+    FROM countries AS c
+    INNER JOIN populations AS p
+    ON c.code = p.country_code
+    INNER JOIN economies AS e
+    ON c.code = e.code
+    -- Add an additional joining condition such that you are also joining on year
+        AND e.year = p.year;
+    {% endhighlight %}
 
-## Outer Joins, Cross Joins and Self Joins
-## Set Theory for SQL Joins
-## Subqueries
+*   ## Outer Joins, Cross Joins and Self Joins
+*   ## Set Theory for SQL Joins
+*   ## Subqueries
 
 <a name="4"/>
 # Data Manipulation in SQL
 
-## We'll take the CASE
-## Short and Simple Subqueries
-## Correlated Queries, Nested Queries, and Common Table Expressions
-## Window Functions
+*   ## We'll take the CASE
+*   ## Short and Simple Subqueries
+*   ## Correlated Queries, Nested Queries, and Common Table Expressions
+*   ## Window Functions
 
 <a name="5"/>
 # PostgreSQL Summary Stats and Window Functions
 
-## Introduction to window functions
-## Fetching, ranking, and paging
-## Aggregate window functions and frames
-## Beyond window functions
+*   ## Introduction to window functions
+*   ## Fetching, ranking, and paging
+*   ## Aggregate window functions and frames
+*   ## Beyond window functions
 
 <a name="6"/>
 # Functions for Manipulating Data in PostgreSQL
 
-## Overview of Common Data Types
-## Working with DATE/TIME Functions and Operators
-## Parsing and Manipulating Text
-## Full-text Search and PostgresSQL Extensions
+*   ## Overview of Common Data Types
+*   ## Working with DATE/TIME Functions and Operators
+*   ## Parsing and Manipulating Text
+*   ## Full-text Search and PostgresSQL Extensions
