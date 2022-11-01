@@ -25,6 +25,14 @@ categories: [SQL]
 
 ## Relational Databases
 
+SQL, short for Structured Query Language
+
+{% highlight SQL %}
+SELECT *
+    FROM company;
+LIMIT 5
+{% endhighlight %}
+
 ## Querying
 
 
