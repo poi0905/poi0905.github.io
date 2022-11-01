@@ -71,6 +71,14 @@ LIMIT 10;
 # Intermediate SQL
 
 ## Selecting Data
+
+{% highlight SQL %}
+SELECT COUNT(DISTINCT(country)) AS count_distinct_countries
+FROM films;
+{% endhighlight %}
+
+[Style guide](https://www.sqlstyle.guide/)
+
 ## Filtering Records
 ## Aggregate Functions
 ## Sorting and Grouping
