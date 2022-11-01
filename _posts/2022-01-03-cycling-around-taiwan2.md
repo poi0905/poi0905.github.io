@@ -15,15 +15,10 @@ categories: [遊記]
 # 目錄
 
 1. [Day1](#Day1)
-
 2. [Day2](#Day2)
-
 3. [Day3](#Day3)
-
 4. [Day4](#Day4)
-
 5. [Day5](#Day5)
-
 6. [結語](#結語)
 
 

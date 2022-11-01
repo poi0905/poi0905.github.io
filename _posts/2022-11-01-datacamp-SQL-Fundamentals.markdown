@@ -9,9 +9,9 @@ categories: [SQL]
 
 學習筆記...
 
-# 目錄
-
 ***
+
+# 目錄
 
 1. [Introduction to SQL](#1)
 2. [Intermediate SQL](#2)
@@ -33,6 +33,11 @@ categories: [SQL]
 
 ## Querying
 
+{% highlight SQL %}
+SELECT *
+    FROM company;
+LIMIT 5
+{% endhighlight %}
 
 <a name="2"/>
 # Intermediate SQL
