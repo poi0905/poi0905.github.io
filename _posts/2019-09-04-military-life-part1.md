@@ -4,7 +4,7 @@ title:  2019 軍旅生活(上)
 summary: 其實當兵也是個蠻酷的體驗拉...(?)
 date:   2019-09-04 18:05:55 +0800
 image:  當兵合照.jpg
-# tags:   紀錄
+tags:   紀錄
 categories: [紀錄]
 ---
 

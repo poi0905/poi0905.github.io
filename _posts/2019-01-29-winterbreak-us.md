@@ -4,7 +4,7 @@ title:  2019.01 Minneapolis x Chicago
 summary: 不是第一次自己搭飛機，但是是第一次一個人出國自助!
 date:   2019-01-29 18:05:55 +0800
 image:  2019us.jpg
-# tags:   遊記
+tags:   遊記
 categories: [遊記]
 ---
 

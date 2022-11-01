@@ -4,7 +4,7 @@ title:  使用scikit-learn來執行監督式學習
 summary: datacamp學習筆記
 date:   2021-08-19 18:05:55 +0800
 image:  sklearn.jpg
-# tags:   Python
+tags:   Python
 categories: [Python]
 ---
 

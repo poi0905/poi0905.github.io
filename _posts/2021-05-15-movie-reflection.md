@@ -4,7 +4,7 @@ title:  電影心得
 summary: 沒有架構地寫下自己的想寫的東西
 date:   2021-05-15 18:05:55 +0800
 image:  movie.jpg
-# tags:   紀錄
+tags:   紀錄
 categories: [紀錄]
 ---
 
