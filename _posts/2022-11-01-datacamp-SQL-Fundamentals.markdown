@@ -11,7 +11,7 @@ categories: [SQL]
 
 ***
 
-# 目錄
+# SKILL TRACK
 
 1. [Introduction to SQL](#1)
 2. [Intermediate SQL](#2)
