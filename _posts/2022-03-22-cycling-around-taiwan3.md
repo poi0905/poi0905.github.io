@@ -26,8 +26,6 @@ tags:   遊記
 <a name="Day1"/>
 # 📍Day1-2022/03/19
 
-***
-
 ![image](https://raw.githubusercontent.com/poi0905/blog/master/assets/img/posts/c1.jpg)
 
 出發前帥氣的合照
@@ -72,8 +70,6 @@ tags:   遊記
 <a name="Day2"/>
 # 📍Day2-2021/03/20
 
-***
-
 ![image](https://raw.githubusercontent.com/poi0905/blog/master/assets/img/posts/cday2.jpg)
 
 第二天直接從集集出發台21，台21就是中部騎車的人會常去的地方，也就是俗稱的天冷。跑起來真的超級舒服，想想北部只有北宜是真的可憐0.0
@@ -104,8 +100,6 @@ tags:   遊記
 <a name="Day3"/>
 # 📍Day3-2021/03/21
 
-***
-
 ![image](https://raw.githubusercontent.com/poi0905/blog/master/assets/img/posts/cday3.jpg)
 
 第三天一早起床，發現昨晚沒看到的椰子樹，再配上太陽，其實頗有度假的感覺，個人推這家飯店！
@@ -130,8 +124,6 @@ tags:   遊記
 <a name="Day4"/>
 # 📍Day4-2022/03/22
 
-***
-
 ![image](https://raw.githubusercontent.com/poi0905/blog/master/assets/img/posts/cday4.jpg)
 
 第四天由於室友們比較晚起我先自己吃早餐，回來等到他們醒來後我們就沖沖出發，免得炸屎在路上哈哈哈
@@ -147,8 +139,6 @@ tags:   遊記
 
 <a name="結語"/>
 # 結語
-
-***
 
 這次前兩天的行程真的讚，騎車騎得很舒服，沒什麼人跟你塞，而且風光明媚，但後兩天可能是疲乏了，再加上都沒太陽，騎到有點厭世，都是草草想要趕快抵達目的地。但總而言之還是很愉快的行程啦，以後畢業後真的很少機會能夠這樣出去玩，我自己也不知道我未來會怎麼走，室友們應該也是輪班爆肝吧。面對到畢業之際才深刻體會到當學生的幸福，但各個階段都有該階段的酸甜苦辣（怎麼突然變感慨文？），期待未來還有這份衝勁與時間（很重要）去完成自己想做的事情！
 

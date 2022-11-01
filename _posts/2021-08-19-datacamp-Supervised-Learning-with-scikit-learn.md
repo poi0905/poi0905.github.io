@@ -21,8 +21,6 @@ Supervised learning 與 Unsupervised learning 最大的差別在於要不要主�
 
 # 目錄
 
-0. [前言](#前言)
-
 1. [Classification](#Classification)
 
 2. [Regression](#Regression)
@@ -34,8 +32,6 @@ Supervised learning 與 Unsupervised learning 最大的差別在於要不要主�
 
 <a name="Classification"/>
 # Classification
-
-***
 
 *EDA(Exploratory data analysis)*
 
@@ -137,8 +133,6 @@ plt.show()
 
 <a name="Regression"/>
 # Regression
-
-***
 
 - regression 的 target value(y) 是連續型的變數，如GDP。
 - 以下範例為預測年紀的程式碼
@@ -300,8 +294,6 @@ plt.show()
 <a name="3"/>
 # Fine-tuning your model
 
-***
-
 - Metrics for classification
     - KNN 
 ```python
@@ -460,8 +452,6 @@ print("Tuned ElasticNet MSE: {}".format(mse))
 
 <a name="4"/>
 # Preprocessing and pipelines
-
-***
 
 - Scikit-learn will not accept categorical features by default
 - Create dummy variables!!

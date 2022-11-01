@@ -6,6 +6,8 @@ image:  SQL.jpg
 tags:   SQL
 ---
 
+施工中...
+
 # 目錄
 
 ***
@@ -19,7 +21,6 @@ tags:   SQL
 <a name="1"/>
 # Exploratory Data Analysis in SQL
 
-***
 ## What's in the database?
 
 |Code                             |     Note                             |   
@@ -57,8 +58,6 @@ SELECT company.name
 <a name="2"/>
 # Data-Driven Decision Making in SQL
 
-***
-
 ## Introduction to business intelligence for a online movie rental database
 ## Decision Making with simple SQL queries
 ## Data Driven Decision Making with advanced SQL queries
@@ -66,8 +65,6 @@ SELECT company.name
 
 <a name="3"/>
 # Applying SQL to Real-World Problems
-
-***
 
 ## Use Real-World SQL
 ## Find Your Data
@@ -77,8 +74,6 @@ SELECT company.name
 <a name="4"/>
 # Analyzing Business Data in SQL
 
-***
-
 ## Revenue, Cost, and Profit
 ## User-Centric KPIs
 ## ARPU, Histograms, and Percentiles
@@ -86,8 +81,6 @@ SELECT company.name
 
 <a name="5"/>
 # Reporting in SQL
-
-***
 
 ## Exploring the Olympics Dataset
 ## Creating Reports
