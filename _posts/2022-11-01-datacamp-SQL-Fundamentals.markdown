@@ -7,7 +7,7 @@ tags:   SQL
 categories: [SQL]
 ---
 
-施工中...
+學習筆記...
 
 # 目錄
 
@@ -25,7 +25,9 @@ categories: [SQL]
 
 ## Relational Databases
 
-SQL, short for Structured Query Language
+*   SQL, short for Structured Query Language
+*   The field names should be made singular
+*   The table name should not be capitalized
 
 {% highlight SQL %}
 SELECT *
