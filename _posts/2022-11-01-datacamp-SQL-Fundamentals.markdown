@@ -50,6 +50,16 @@ SELECT DISTINCT author AS unique_author
 FROM books;
 {% endhighlight %}
 
+**PostgreSQL**   
+*   Free and open-source relational database system
+*   Created at UCB
+*   "PostgreSQL" refers to both the PostgreSQL database system and its associated SQL flavor
+
+**SQL**
+*   Has free and paid versions
+*   Created by Microsoft
+*   T-SQL is Microsoft's SQL flavor, used with SQL Server databases
+
 <a name="2"/>
 # Intermediate SQL
 
