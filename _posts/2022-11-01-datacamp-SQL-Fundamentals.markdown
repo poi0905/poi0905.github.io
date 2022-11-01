@@ -35,8 +35,18 @@ categories: [SQL]
 
 {% highlight SQL %}
 SELECT *
-    FROM company;
-LIMIT 5
+FROM company;
+{% endhighlight %}
+
+{% highlight SQL %}
+SELECT DISTINCT year_hired
+FROM employees;
+{% endhighlight %}
+
+{% highlight SQL %}
+CREATE VIEW employee_hire_years AS
+SELECT id, name, year_hired
+FROM employees;
 {% endhighlight %}
 
 <a name="2"/>
