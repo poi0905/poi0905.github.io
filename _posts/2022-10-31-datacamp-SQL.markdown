@@ -101,6 +101,21 @@ SELECT name, tag_type.tag, tag_type.type
   WHERE type='cloud';
 {% endhighlight %}
 
+{% highlight SQL %}
+-- Select the 3 columns desired
+-- Use coalesce
+SELECT coalesce(fortune500.industry, fortune500.sector, 'Unknown') AS industry2,
+       -- Don't forget to count!
+       count(industry) 
+  FROM fortune500 
+-- Group by what? (What are you counting by?)
+ GROUP BY industry2
+-- Order results to see most common first
+ ORDER BY count DESC
+-- Limit results to get just the one value you want
+ LIMIT 1;
+{% endhighlight %}
+
 
 ## Summarizing and aggregating numeric data
 ## Exploring categorical data and unstructured text
