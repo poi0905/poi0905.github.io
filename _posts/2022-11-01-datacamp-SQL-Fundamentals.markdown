@@ -87,6 +87,29 @@ FROM films;
 # Joining Data in SQL
 
 ## Introducing Inner Joins
+
+*When writing joins, many SQL users prefer to write the SELECT statement after writing the join code, in case the SELECT statement requires using table aliases.*
+
+{% highlight SQL %}
+-- Select fields with aliases
+SELECT c.code AS country_code, name, year, inflation_rate
+FROM countries AS c
+-- Join to economies (alias e)
+INNER JOIN economies AS e
+-- Match on code field using table aliases
+ON c.code = e.code;
+{% endhighlight %}
+
+*Recall that when both the field names being joined on are the same, you can take advantage of the `USING` clause.*
+
+{% highlight SQL %}
+SELECT c.name AS country, l.name AS language, official
+FROM countries AS c
+INNER JOIN languages AS l
+-- Match using the code column
+USING(code);
+{% endhighlight %}
+
 ## Outer Joins, Cross Joins and Self Joins
 ## Set Theory for SQL Joins
 ## Subqueries
