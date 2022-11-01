@@ -23,11 +23,8 @@ Supervised learning 與 Unsupervised learning 最大的差別在於要不要主�
 # 目錄
 
 1. [Classification](#Classification)
-
 2. [Regression](#Regression)
-
 3. [Fine-tuning your model](#3)
-
 4. [Preprocessing and pipelines](#4)
 
 

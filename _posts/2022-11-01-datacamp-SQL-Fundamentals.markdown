@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  SQL Fundamentals
-date:   2022-11-01 18:05:55 +0800
+date:   2022-11-01 18:00:55 +0800
 image:  SQL101.jpg
 tags:   SQL
 categories: [SQL]

@@ -21,17 +21,11 @@ categories: [Python]
 # 目錄
 
 1. [Transforming Data](#1)
-
 2. [Aggregating Data](#2)
-
 3. [Slicing and Indexing](#3)
-
 4. [Creating and Visualizing DataFrames](#4)
-
 5. [Data Merging](#5)
-
 6. [Advanced Merging and Concatenating](#6)
-
 7. [Merging Ordered and Time-Series Data](#7)
 
 
