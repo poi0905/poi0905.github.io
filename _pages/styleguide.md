@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Style Guide
-permalink: /styleguide/
+title: Tag
+permalink: /tag_page/
 image: 08.jpg
 ---
 
