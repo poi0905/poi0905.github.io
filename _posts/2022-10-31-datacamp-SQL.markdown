@@ -87,6 +87,20 @@ SELECT type, count(*) AS count
  ORDER BY count DESC;
 {% endhighlight %}
 
+{% highlight SQL %}
+-- Select the 3 columns desired
+SELECT name, tag_type.tag, tag_type.type
+  FROM company
+  	   -- Join the tag_company and company tables
+       INNER JOIN tag_company 
+       ON company.id = tag_company.company_id
+       -- Join the tag_type and company tables
+       INNER JOIN tag_type
+       ON tag_company.tag = tag_type.tag
+  -- Filter to most common type
+  WHERE type='cloud';
+{% endhighlight %}
+
 
 ## Summarizing and aggregating numeric data
 ## Exploring categorical data and unstructured text
