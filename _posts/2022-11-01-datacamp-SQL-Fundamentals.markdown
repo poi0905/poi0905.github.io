@@ -28,6 +28,8 @@ categories: [SQL]
 *   SQL, short for Structured Query Language
 *   The field names should be made singular
 *   The table name should not be capitalized
+*   Schemas: "blueprints" of databases
+*   `VARCHAR` is a flexible and popular string data type in SQL
 
 {% highlight SQL %}
 SELECT *
