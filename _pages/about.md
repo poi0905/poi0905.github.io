@@ -2,7 +2,7 @@
 layout: page
 title: About
 permalink: /about/
-image: 01.jpg
+image: me.jpg
 ---
 
 1998年生，來自桃園，畢業於國立台灣大學財務金融學系，並完成商業分析資料學程。
