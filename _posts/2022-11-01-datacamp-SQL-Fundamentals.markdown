@@ -31,12 +31,6 @@ categories: [SQL]
 *   Schemas: "blueprints" of databases
 *   `VARCHAR` is a flexible and popular string data type in SQL
 
-{% highlight SQL %}
-SELECT *
-    FROM company;
-LIMIT 5
-{% endhighlight %}
-
 ## Querying
 
 
