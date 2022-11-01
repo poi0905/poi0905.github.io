@@ -60,6 +60,13 @@ FROM books;
 *   Created by Microsoft
 *   T-SQL is Microsoft's SQL flavor, used with SQL Server databases
 
+{% highlight SQL %}
+-- Select the first 10 genres from books using PostgreSQL
+SELECT genre
+FROM books
+LIMIT 10;
+{% endhighlight %}
+
 <a name="2"/>
 # Intermediate SQL
 
