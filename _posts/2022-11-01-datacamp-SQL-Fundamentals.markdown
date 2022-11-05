@@ -110,7 +110,7 @@ INNER JOIN languages AS l
 USING(code);
 {% endhighlight %}
 
-{% highlight SQL %}
+{% highlight SQL %}git
 SELECT name, e.year, fertility_rate, unemployment_rate
 FROM countries AS c
 INNER JOIN populations AS p
