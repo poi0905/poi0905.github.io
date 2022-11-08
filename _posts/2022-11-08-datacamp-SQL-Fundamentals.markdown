@@ -224,7 +224,7 @@ LIMIT 1;
 
 ![image](https://raw.githubusercontent.com/poi0905/poi0905.github.io/master/images/SQL_JOINS.jpg)
 
-[Scources](https://zhuanlan.zhihu.com/p/29234064)
+[Scource](https://zhuanlan.zhihu.com/p/29234064)
 
 ## Introducing Inner Joins
 
@@ -270,8 +270,21 @@ LIMIT 10;
 {% endhighlight %}
 
 {% highlight SQL %}
-
+SELECT 
+	c1.name AS country, 
+    region, 
+    l.name AS language,
+	basic_unit, 
+    frac_unit
+FROM countries as c1 
+FULL JOIN languages AS l
+USING(code)
+FULL JOIN currencies AS c2
+USING(code)
+WHERE region LIKE 'M%esia';
 {% endhighlight %}
+
+`CROSS JOIN` creates all possible combinations of two tables.
 
 {% highlight SQL %}
 
