@@ -365,7 +365,37 @@ ORDER BY name;
 ## Subqueries
 
 {% highlight SQL %}
+SELECT DISTINCT name
+FROM languages
+-- Add syntax to use bracketed subquery below as a filter
+WHERE code IN
+    (SELECT code
+    FROM countries
+    WHERE region = 'Middle East')
+ORDER BY name;
+{% endhighlight %}
 
+{% highlight SQL %}
+SELECT code, name
+FROM countries
+WHERE continent = 'Oceania'
+-- Filter for countries not included in the bracketed subquery
+  AND code NOT IN
+    (SELECT code
+    FROM currencies);
+{% endhighlight %}
+
+* Subqueries inside `WHERE` and `SELECT`
+
+{% highlight SQL %}
+SELECT *
+FROM populations
+-- Filter for only those populations where life expectancy is 1.15 times higher than average
+WHERE life_expectancy > 1.15 *
+  (SELECT AVG(life_expectancy)
+   FROM populations
+   WHERE year = 2015) 
+     AND year = 2015;
 {% endhighlight %}
 
 {% highlight SQL %}
