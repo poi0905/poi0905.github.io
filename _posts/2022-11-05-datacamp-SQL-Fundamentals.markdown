@@ -80,6 +80,49 @@ FROM films;
 [Style guide](https://www.sqlstyle.guide/)
 
 ## Filtering Records
+
+{% highlight SQL %}
+SELECT title, release_year
+FROM films
+WHERE (release_year = 1990 OR release_year = 1999)
+	AND (language = 'English' OR language = 'Spanish')
+-- Filter films with more than $2,000,000 gross
+	AND gross > 2000000;
+{% endhighlight %}
+
+{% highlight SQL %}
+SELECT title, release_year
+FROM films
+WHERE release_year BETWEEN 1990 AND 2000
+	AND budget > 100000000
+-- Amend the query to include Spanish or French-language films
+	AND (language = 'Spanish' OR language = 'French');
+{% endhighlight %}
+
+**Filtering text**
+
+{% highlight SQL %}
+-- Select the names that start with B
+SELECT name
+FROM people
+WHERE name LIKE 'B%';
+{% endhighlight %}
+
+{% highlight SQL %}
+SELECT name
+FROM people
+-- Select the names that have r as the second letter
+WHERE name LIKE '_r%';
+{% endhighlight %}
+
+{% highlight SQL %}
+SELECT name
+FROM people
+-- Select names that don't start with A
+WHERE NAME NOT LIKE 'A%';
+{% endhighlight %}
+
+
 ## Aggregate Functions
 ## Sorting and Grouping
 
