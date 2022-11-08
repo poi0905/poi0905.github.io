@@ -143,7 +143,45 @@ WHERE budget IS NULL;
 {% endhighlight %}
 
 ## Aggregate Functions
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
 ## Sorting and Grouping
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
 
 <a name="3"/>
 # Joining Data in SQL
