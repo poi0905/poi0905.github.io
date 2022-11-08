@@ -144,24 +144,29 @@ WHERE budget IS NULL;
 
 ## Aggregate Functions
 
-{% highlight SQL %}
+**`ROUND()` with a negative parameter** 
 
+{% highlight SQL %}
+-- Calculate the average budget rounded to the thousands
+SELECT ROUND(AVG(budget),-3) AS avg_budget_thousands
+FROM films;
+{% endhighlight %}
+
+**What is the result if you divide a `discount` of two dollars by the `paid_price` of ten dollars to get the discount percentage?**
+**--> 0**
+**SQL thinks we want the answer to be an integer since we are dividing two integers. 0 is the closest integer to 0.2.**
+
+**`COUNT` won't count `NULL`**
+{% highlight SQL %}
+-- Calculate the percentage of people who are no longer alive
+SELECT COUNT(deathdate) * 100.0 / COUNT(*) AS percentage_dead
+FROM people;
 {% endhighlight %}
 
 {% highlight SQL %}
-
-{% endhighlight %}
-
-{% highlight SQL %}
-
-{% endhighlight %}
-
-{% highlight SQL %}
-
-{% endhighlight %}
-
-{% highlight SQL %}
-
+-- Round duration_hours to two decimal places
+SELECT title, ROUND(duration / 60.0, 2) AS duration_hours
+FROM films;
 {% endhighlight %}
 
 ## Sorting and Grouping
