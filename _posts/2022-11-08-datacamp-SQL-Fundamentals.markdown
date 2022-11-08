@@ -222,7 +222,7 @@ LIMIT 1;
 
 *Quick Overview*
 
-![image](https://raw.githubusercontent.com/poi0905/blog/master/assets/img/posts/SQL_JOINS.JPG)
+![image](images/SQL_JOINS.jpg)
 
 [Scources](https://zhuanlan.zhihu.com/p/29234064)
 
@@ -262,6 +262,9 @@ ON c.code = e.code
 {% endhighlight %}
 
 ## Outer Joins, Cross Joins and Self Joins
+
+* `RIGHT JOIN` is less commonly used than `LEFT JOIN`
+* Any `RIGHT JOIN` can be re-written as a `LEFT JOIN`
 
 {% highlight SQL %}
 
