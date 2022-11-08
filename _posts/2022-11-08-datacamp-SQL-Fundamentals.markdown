@@ -220,6 +220,12 @@ LIMIT 1;
 <a name="3"/>
 # 3. Joining Data in SQL
 
+*Quick Overview*
+
+![image](https://raw.githubusercontent.com/poi0905/blog/master/assets/img/posts/SQL JOINS.JPEG)
+
+[Scources](https://zhuanlan.zhihu.com/p/29234064)
+
 ## Introducing Inner Joins
 
 *When writing joins, many SQL users prefer to write the SELECT statement after writing the join code, in case the SELECT statement requires using table aliases.*
