@@ -272,10 +272,10 @@ LIMIT 10;
 {% highlight SQL %}
 SELECT 
 	c1.name AS country, 
-    region, 
-    l.name AS language,
+  region, 
+  l.name AS language,
 	basic_unit, 
-    frac_unit
+  frac_unit
 FROM countries as c1 
 FULL JOIN languages AS l
 USING(code)
@@ -300,7 +300,7 @@ WHERE c.code in ('PAK','IND')
 
 {% highlight SQL %}
 SELECT 
-	p1.country_code, 
+    p1.country_code, 
     p1.size AS size2010, 
     p2.size AS size2015
 FROM populations AS p1
@@ -313,12 +313,30 @@ WHERE p1.year = 2010
 
 ## Set Theory for SQL Joins
 
-{% highlight SQL %}
+`UNION` can be helpful for consolidating data from multiple tables into one result, which as you have seen, can then be ordered in meaningful ways.
 
+{% highlight SQL %}
+-- Select all fields from economies2015
+SELECT *
+FROM economies2015 
+-- Set operation
+UNION
+-- Select all fields from economies2019
+SELECT *
+FROM economies2019 
+ORDER BY code, year;
 {% endhighlight %}
 
-{% highlight SQL %}
+`UNION` returned 434 records, whereas `UNION ALL` returned 814. There are duplicates in the `UNION ALL`.
 
+{% highlight SQL %}
+SELECT code, year
+FROM economies
+-- Set theory clause
+UNION ALL
+SELECT country_code, year
+FROM populations
+ORDER BY code, year;
 {% endhighlight %}
 
 {% highlight SQL %}
