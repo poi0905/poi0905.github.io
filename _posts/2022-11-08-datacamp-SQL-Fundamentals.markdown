@@ -222,7 +222,7 @@ LIMIT 1;
 
 *Quick Overview*
 
-![image](https://raw.githubusercontent.com/poi0905/blog/master/assets/img/posts/SQL JOINS.JPEG)
+![image](https://raw.githubusercontent.com/poi0905/blog/master/assets/img/posts/SQL_JOINS.JPG)
 
 [Scources](https://zhuanlan.zhihu.com/p/29234064)
 
