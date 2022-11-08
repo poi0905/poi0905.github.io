@@ -399,15 +399,52 @@ WHERE life_expectancy > 1.15 *
 {% endhighlight %}
 
 {% highlight SQL %}
-
+-- Select relevant fields from cities table
+SELECT name, country_code, urbanarea_pop
+-- Filter using a subquery on the countries table
+FROM cities
+WHERE name IN
+    (SELECT capital
+    FROM countries)
+ORDER BY urbanarea_pop DESC;
 {% endhighlight %}
 
 {% highlight SQL %}
+SELECT countries.name AS country,
+-- Subquery that provides the count of cities   
+  (SELECT COUNT(*)
+   FROM cities
+   WHERE countries.code = cities.country_code) AS cities_num
+FROM countries
+ORDER BY cities_num DESC, country
+LIMIT 9;
+{% endhighlight %}
 
+* Subqueries inside FROM
+
+{% highlight SQL %}
+-- Select local_name and lang_num from appropriate tables
+SELECT local_name, sub.lang_num
+FROM countries,
+    (SELECT code, COUNT(*) AS lang_num
+     FROM languages
+     GROUP BY code) AS sub
+-- Where codes match    
+WHERE countries.code = sub.code
+ORDER BY lang_num DESC;
 {% endhighlight %}
 
 {% highlight SQL %}
-
+-- Select relevant fields
+SELECT code, inflation_rate, unemployment_rate
+FROM economies
+WHERE year = 2015 
+  AND code NOT IN
+-- Subquery returning country codes filtered on gov_form
+	(SELECT code
+  FROM countries
+  WHERE gov_form LIKE '%Republic%' OR gov_form LIKE '%Monarchy%')
+ORDER BY inflation_rate;
 {% endhighlight %}
 
 
