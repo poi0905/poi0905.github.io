@@ -172,20 +172,48 @@ FROM films;
 
 ## Sorting and Grouping
 
-{% highlight SQL %}
+**Sorting multiple fields**
 
+{% highlight SQL %}
+-- Select the certification, release year, and title sorted by certification and release year
+SELECT certification, release_year, title
+from films
+ORDER BY certification ASC, release_year DESC;
 {% endhighlight %}
 
 {% highlight SQL %}
+SELECT release_year, COUNT(DISTINCT(language)) AS language_num
+FROM films
+GROUP BY release_year
+ORDER BY language_num DESC;
+{% endhighlight %}
 
+**Filtering grouped data: `HAVING`**
+
+* `WHERE` filters individual records
+* `HAVING` filters grouped records
+
+{% highlight SQL %}
+-- Select the country and average_budget from films
+SELECT country, ROUND(AVG(budget), 2) AS average_budget
+FROM films
+-- Group by country
+GROUP BY country
+-- Filter to countries with an average_budget of more than one billion
+HAVING ROUND(AVG(budget), 2) > 1000000000
+-- Order by descending order of the aggregated budget
+ORDER BY average_budget DESC;
 {% endhighlight %}
 
 {% highlight SQL %}
-
-{% endhighlight %}
-
-{% highlight SQL %}
-
+SELECT release_year, AVG(budget) AS avg_budget, AVG(gross) AS avg_gross
+FROM films
+WHERE release_year > 1990
+GROUP BY release_year
+HAVING AVG(budget) > 60000000
+-- Order the results from highest to lowest average gross and limit to one
+ORDER BY avg_gross DESC
+LIMIT 1;
 {% endhighlight %}
 
 
