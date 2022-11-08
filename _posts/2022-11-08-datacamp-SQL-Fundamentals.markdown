@@ -144,7 +144,7 @@ WHERE budget IS NULL;
 
 ## Aggregate Functions
 
-**`ROUND()` with a negative parameter** 
+*`ROUND()` with a negative parameter*
 
 {% highlight SQL %}
 -- Calculate the average budget rounded to the thousands
@@ -155,9 +155,9 @@ FROM films;
 **What is the result if you divide a `discount` of two dollars by the `paid_price` of ten dollars to get the discount percentage?**
 **--> 0**
 
-**SQL thinks we want the answer to be an integer since we are dividing two integers. 0 is the closest integer to 0.2.**
+*SQL thinks we want the answer to be an integer since we are dividing two integers. 0 is the closest integer to 0.2.*
 
-**`COUNT` won't count `NULL`**
+**`COUNT` won't count `NULL`.**
 {% highlight SQL %}
 -- Calculate the percentage of people who are no longer alive
 SELECT COUNT(deathdate) * 100.0 / COUNT(*) AS percentage_dead
@@ -188,7 +188,7 @@ GROUP BY release_year
 ORDER BY language_num DESC;
 {% endhighlight %}
 
-**Filtering grouped data: `HAVING`**
+*Filtering grouped data: `HAVING`*
 
 * `WHERE` filters individual records
 * `HAVING` filters grouped records
@@ -244,7 +244,7 @@ INNER JOIN languages AS l
 USING(code);
 {% endhighlight %}
 
-{% highlight SQL %}git
+{% highlight SQL %}
 SELECT name, e.year, fertility_rate, unemployment_rate
 FROM countries AS c
 INNER JOIN populations AS p
