@@ -134,6 +134,14 @@ WHERE release_year BETWEEN 1990 AND 1999
 	AND certification IN ('G', 'PG', 'PG-13');
 {% endhighlight %}
 
+**`Null`**
+{% highlight SQL %}
+-- List all film titles with missing budgets
+SELECT title AS no_budget_info
+FROM films
+WHERE budget IS NULL;
+{% endhighlight %}
+
 ## Aggregate Functions
 ## Sorting and Grouping
 
