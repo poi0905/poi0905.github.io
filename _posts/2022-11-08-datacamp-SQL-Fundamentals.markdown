@@ -154,6 +154,7 @@ FROM films;
 
 **What is the result if you divide a `discount` of two dollars by the `paid_price` of ten dollars to get the discount percentage?**
 **--> 0**
+
 **SQL thinks we want the answer to be an integer since we are dividing two integers. 0 is the closest integer to 0.2.**
 
 **`COUNT` won't count `NULL`**
@@ -227,8 +228,59 @@ ON c.code = e.code
 {% endhighlight %}
 
 ## Outer Joins, Cross Joins and Self Joins
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
 ## Set Theory for SQL Joins
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
 ## Subqueries
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
 
 <a name="4"/>
 # Data Manipulation in SQL
@@ -351,8 +403,60 @@ GROUP BY country;
 {% endhighlight %}
 
 ## Short and Simple Subqueries
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
 ## Correlated Queries, Nested Queries, and Common Table Expressions
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
 ## Window Functions
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
 
 <a name="5"/>
 # PostgreSQL Summary Stats and Window Functions
@@ -447,13 +551,135 @@ ORDER BY Event ASC, Gender ASC, Year ASC;
 {% endhighlight %}
 
 ## Fetching, ranking, and paging
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
 ## Aggregate window functions and frames
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
 ## Beyond window functions
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
 
 <a name="6"/>
 # Functions for Manipulating Data in PostgreSQL
 
 ## Overview of Common Data Types
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
 ## Working with DATE/TIME Functions and Operators
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
 ## Parsing and Manipulating Text
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
 ## Full-text Search and PostgresSQL Extensions
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+{% highlight SQL %}
+
+{% endhighlight %}
