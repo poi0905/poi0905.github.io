@@ -339,6 +339,8 @@ FROM populations
 ORDER BY code, year;
 {% endhighlight %}
 
+*`INTERSECT`*
+
 {% highlight SQL %}
 -- Return all cities with the same name as a country
 SELECT name
@@ -347,6 +349,8 @@ INTERSECT
 SELECT name
 FROM countries;
 {% endhighlight %}
+
+*`EXCEPT`*
 
 {% highlight SQL %}
 -- Return all cities that do not have the same name as a country
