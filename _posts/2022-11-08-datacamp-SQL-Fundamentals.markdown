@@ -21,7 +21,7 @@ categories: [SQL]
 6. [Functions for Manipulating Data in PostgreSQL](#6)
 
 <a name="1"/>
-# Introduction to SQL
+# 1. Introduction to SQL
 
 ## Relational Databases
 
@@ -68,7 +68,7 @@ LIMIT 10;
 {% endhighlight %}
 
 <a name="2"/>
-# Intermediate SQL
+# 2. Intermediate SQL
 
 ## Selecting Data
 
@@ -190,7 +190,7 @@ FROM films;
 
 
 <a name="3"/>
-# Joining Data in SQL
+# 3. Joining Data in SQL
 
 ## Introducing Inner Joins
 
@@ -283,7 +283,7 @@ ON c.code = e.code
 
 
 <a name="4"/>
-# Data Manipulation in SQL
+# 4. Data Manipulation in SQL
 
 ## We'll take the CASE
 
@@ -459,7 +459,7 @@ GROUP BY country;
 
 
 <a name="5"/>
-# PostgreSQL Summary Stats and Window Functions
+# 5. PostgreSQL Summary Stats and Window Functions
 
 ## Introduction to window functions
 
@@ -608,7 +608,7 @@ ORDER BY Event ASC, Gender ASC, Year ASC;
 
 
 <a name="6"/>
-# Functions for Manipulating Data in PostgreSQL
+# 6. Functions for Manipulating Data in PostgreSQL
 
 ## Overview of Common Data Types
 
