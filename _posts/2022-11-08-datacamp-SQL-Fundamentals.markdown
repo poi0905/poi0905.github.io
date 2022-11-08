@@ -243,14 +243,6 @@ ON c.code = e.code;
 *Recall that when both the field names being joined on are the same, you can take advantage of the `USING` clause.*
 
 {% highlight SQL %}
-SELECT c.name AS country, l.name AS language, official
-FROM countries AS c
-INNER JOIN languages AS l
--- Match using the code column
-USING(code);
-{% endhighlight %}
-
-{% highlight SQL %}
 SELECT name, e.year, fertility_rate, unemployment_rate
 FROM countries AS c
 INNER JOIN populations AS p
@@ -267,17 +259,14 @@ ON c.code = e.code
 * Any `RIGHT JOIN` can be re-written as a `LEFT JOIN`
 
 {% highlight SQL %}
-SELECT 
-	c1.name AS city, 
-    code, 
-    c2.name AS country,
-    region, 
-    city_proper_pop
-FROM cities AS c1
--- Join right table (with alias)
-LEFT JOIN countries AS c2
-ON c1.country_code = c2.code
-ORDER BY code DESC;
+SELECT region, AVG(gdp_percapita) AS avg_gdp
+FROM countries AS c
+LEFT JOIN economies AS e
+USING(code)
+WHERE year = 2010
+GROUP BY region
+ORDER BY avg_gdp DESC
+LIMIT 10;
 {% endhighlight %}
 
 {% highlight SQL %}
