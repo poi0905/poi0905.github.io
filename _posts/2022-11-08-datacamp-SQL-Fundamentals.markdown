@@ -267,7 +267,17 @@ ON c.code = e.code
 * Any `RIGHT JOIN` can be re-written as a `LEFT JOIN`
 
 {% highlight SQL %}
-
+SELECT 
+	c1.name AS city, 
+    code, 
+    c2.name AS country,
+    region, 
+    city_proper_pop
+FROM cities AS c1
+-- Join right table (with alias)
+LEFT JOIN countries AS c2
+ON c1.country_code = c2.code
+ORDER BY code DESC;
 {% endhighlight %}
 
 {% highlight SQL %}
