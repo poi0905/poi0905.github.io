@@ -590,18 +590,50 @@ GROUP BY country;
 
 ## Short and Simple Subqueries
 
+* Can be in *any* part of a query, like `SELECT`, `FROM`, `WHERE`, `GROUP BY`
+
+`Where`
+{% highlight SQL %}
+SELECT
+	-- Select the team long and short names
+	team_long_name,
+	team_short_name
+FROM team
+-- Filter for teams with 8 or more home goals
+WHERE team_api_id IN
+	  (SELECT hometeam_ID 
+       FROM match
+       WHERE home_goal >= 8);
+{% endhighlight %}
+
+`FROM`
+{% highlight SQL %}
+SELECT
+	-- Select country, date, home, and away goals from the subquery
+    country,
+    date,
+    home_goal,
+    away_goal
+FROM 
+	-- Select country name, date, home_goal, away_goal, and total goals in the subquery
+	(SELECT c.name AS country, 
+     	    m.date, 
+     		m.home_goal, 
+     		m.away_goal,
+           (m.home_goal + m.away_goal) AS total_goals
+    FROM match AS m
+    LEFT JOIN country AS c
+    ON m.country_id = c.id) AS subquery
+-- Filter by total goals scored in the main query
+WHERE total_goals >= 10;
+{% endhighlight %}
+
+`SELECT`
 {% highlight SQL %}
 
 {% endhighlight %}
 
-{% highlight SQL %}
-
-{% endhighlight %}
-
-{% highlight SQL %}
-
-{% endhighlight %}
-
+`EVERYWHERE`
 {% highlight SQL %}
 
 {% endhighlight %}
