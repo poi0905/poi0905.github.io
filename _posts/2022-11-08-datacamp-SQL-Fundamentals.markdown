@@ -772,6 +772,10 @@ GROUP BY l.name;
 
 {% endhighlight %}
 
+*Key takeaway*
+
+![image](https://raw.githubusercontent.com/poi0905/poi0905.github.io/master/images/SQL_different_technique.jpg)
+
 ## Window Functions
 
 {% highlight SQL %}
