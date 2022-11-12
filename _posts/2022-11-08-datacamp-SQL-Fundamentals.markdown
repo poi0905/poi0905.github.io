@@ -672,6 +672,14 @@ WHERE
 
 ## Correlated Queries, Nested Queries, and Common Table Expressions
 
+**Simple Subquery**:
+* Can be run independently from the main query
+* Evaluated once in the whole query
+
+**Correlated Subquery**:
+* Dependent on the main query to execute
+* Evaluated in loops: Significantly slows down query runtime
+
 {% highlight SQL %}
 
 {% endhighlight %}
