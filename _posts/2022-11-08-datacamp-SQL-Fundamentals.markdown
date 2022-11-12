@@ -681,11 +681,36 @@ WHERE
 * Evaluated in loops: Significantly slows down query runtime
 
 {% highlight SQL %}
-
+SELECT 
+	-- Select country ID, date, home, and away goals from match
+	main.country_id,
+    main.date,
+    main.home_goal,
+    main.away_goal
+FROM match AS main
+WHERE 
+	-- Filter for matches with the highest number of goals scored
+	(home_goal + away_goal) = 
+        (SELECT MAX(sub.home_goal + sub.away_goal)
+         FROM match AS sub
+         WHERE main.country_id = sub.country_id
+               AND main.season = sub.season);
 {% endhighlight %}
 
 {% highlight SQL %}
-
+SELECT
+	-- Select the season and max goals scored in a match
+	season,
+    MAX(home_goal + away_goal) AS max_goals,
+    -- Select the overall max goals scored in a match
+   (SELECT MAX(home_goal + away_goal) FROM match) AS overall_max_goals,
+   -- Select the max number of goals scored in any match in July
+   (SELECT MAX(home_goal + away_goal) 
+    FROM match
+    WHERE id IN (
+          SELECT id FROM match WHERE EXTRACT(MONTH FROM date) = 07)) AS july_max_goals
+FROM match
+GROUP BY season;
 {% endhighlight %}
 
 {% highlight SQL %}
