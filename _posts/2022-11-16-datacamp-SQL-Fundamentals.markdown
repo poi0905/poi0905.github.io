@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  SQL Fundamentals
-date:   2022-11-16 00:00:55 +0800
+date:   2022-11-15 00:00:55 +0800
 image:  SQL101.jpg
 tags:   SQL
 categories: [SQL]
@@ -1043,8 +1043,16 @@ SELECT
 FROM rental;
 {% endhighlight %}
 
-{% highlight SQL %}
+* Note that PostgreSQL array indexes start with one and not zero
 
+{% highlight SQL %}
+-- Select the title and special features column 
+SELECT 
+  title, 
+  special_features 
+FROM film
+-- Use the array index of the special_features column
+WHERE special_features[2] = 'Deleted Scenes';
 {% endhighlight %}
 
 {% highlight SQL %}
