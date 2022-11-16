@@ -1029,10 +1029,18 @@ FROM INFORMATION_SCHEMA.COLUMNS
 WHERE table_name = 'customer';
 {% endhighlight %}
 
+* `DATE` data types use an `yyyy-mm-dd` format
 * `TIMESTAMP`s contain both a date value and a time value with microsecond precision
+* `INTERVAL`s can do arithmetic on date and time columns
 
 {% highlight SQL %}
-
+SELECT
+ 	-- Select the rental and return dates
+	rental_date,
+	return_date,
+ 	-- Calculate the expected_return_date
+	rental_date + INTERVAL '3 days' AS expected_return_date
+FROM rental;
 {% endhighlight %}
 
 {% highlight SQL %}
