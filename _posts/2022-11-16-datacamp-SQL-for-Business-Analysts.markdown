@@ -13,14 +13,14 @@ Boost your business SQL skills. Whether you’re in marketing, finance, or produ
 
 # 目錄
 
-1. [Exploratory Data Analysis in SQL](#1)
-2. [Data-Driven Decision Making in SQL](#2)
-3. [Applying SQL to Real-World Problems](#3)
-4. [Analyzing Business Data in SQL](#4)
-5. [Reporting in SQL](#5)
+1. [1. Exploratory Data Analysis in SQL](#1)
+2. [2. Data-Driven Decision Making in SQL](#2)
+3. [3. Applying SQL to Real-World Problems](#3)
+4. [4. Analyzing Business Data in SQL](#4)
+5. [5. Reporting in SQL](#5)
 
 <a name="1"/>
-# Exploratory Data Analysis in SQL
+# 1. Exploratory Data Analysis in SQL
 
 ## What's in the database?
 
@@ -220,7 +220,7 @@ SELECT revenues_change::integer, COUNT(revenues_change::integer)
 {% endhighlight %}
 
 <a name="2"/>
-# Data-Driven Decision Making in SQL
+# 2. Data-Driven Decision Making in SQL
 
 ## Introduction to business intelligence for a online movie rental database
 
@@ -307,7 +307,7 @@ SELECT revenues_change::integer, COUNT(revenues_change::integer)
 {% endhighlight %}
 
 <a name="3"/>
-# Applying SQL to Real-World Problems
+# 3. Applying SQL to Real-World Problems
 
 ## Use Real-World SQL
 
@@ -394,7 +394,7 @@ SELECT revenues_change::integer, COUNT(revenues_change::integer)
 {% endhighlight %}
 
 <a name="4"/>
-# Analyzing Business Data in SQL
+# 4. Analyzing Business Data in SQL
 
 ## Revenue, Cost, and Profit
 
@@ -481,7 +481,7 @@ SELECT revenues_change::integer, COUNT(revenues_change::integer)
 {% endhighlight %}
 
 <a name="5"/>
-# Reporting in SQL
+# 5. Reporting in SQL
 
 ## Exploring the Olympics Dataset
 
