@@ -299,22 +299,20 @@ WHERE genre <> 'Drama'; -- All genres except drama
 ## Use Real-World SQL
 
 {% highlight SQL %}
-
+EXTRACT(<part> FROM <date_column>)
 {% endhighlight %}
 
+* Use `STRING_AGG` for `GROUP BY`
 
 {% highlight SQL %}
-
-{% endhighlight %}
-
-
-{% highlight SQL %}
-
-{% endhighlight %}
-
-
-{% highlight SQL %}
-
+SELECT name, 
+	STRING_AGG(title, ',') AS film_titles
+FROM film AS f
+INNER JOIN language AS l
+  ON f.language_id = l.language_id
+WHERE release_year = 2010
+  AND rating = 'G'
+GROUP BY name;
 {% endhighlight %}
 
 ## Find Your Data
