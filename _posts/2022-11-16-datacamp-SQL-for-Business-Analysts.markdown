@@ -383,13 +383,37 @@ GROUP BY name;
 
 ## Revenue, Cost, and Profit
 
-{% highlight SQL %}
+* `DATE_TRUNC(date_part, date)`
+  * `DATE_TRUNC('week', '2018-06-12') :: DATE` → `'2018-06-11'`
+  * `DATE_TRUNC('month', '2018-06-12') :: DATE` → `'2018-06-01'`
 
+{% highlight SQL %}
+SELECT DATE_TRUNC('week', order_date) :: DATE AS delivr_week,
+       -- Calculate revenue
+       SUM(meal_price * order_quantity) AS revenue
+  FROM meals
+  JOIN orders ON meals.meal_id = orders.meal_id
+-- Keep only the records in June 2018
+WHERE DATE_TRUNC('month', order_date) = '2018-06-01'
+GROUP BY delivr_week
+ORDER BY delivr_week ASC;
 {% endhighlight %}
 
-
 {% highlight SQL %}
+-- Declare a CTE named monthly_cost
+WITH monthly_cost AS (
+  SELECT
+    DATE_TRUNC('month', stocking_date)::DATE AS delivr_month,
+    SUM(meal_cost * stocked_quantity) AS cost
+  FROM meals
+  JOIN stock ON meals.meal_id = stock.meal_id
+  GROUP BY delivr_month)
 
+SELECT
+  -- Calculate the average monthly cost before September
+  AVG(cost)
+FROM monthly_cost
+WHERE delivr_month < '2018-09-01';
 {% endhighlight %}
 
 
