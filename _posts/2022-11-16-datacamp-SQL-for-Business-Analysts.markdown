@@ -13,11 +13,11 @@ Boost your business SQL skills. Whether you’re in marketing, finance, or produ
 
 # 目錄
 
-1. [1. Exploratory Data Analysis in SQL](#1)
-2. [2. Data-Driven Decision Making in SQL](#2)
-3. [3. Applying SQL to Real-World Problems](#3)
-4. [4. Analyzing Business Data in SQL](#4)
-5. [5. Reporting in SQL](#5)
+1. [Exploratory Data Analysis in SQL](#1)
+2. [Data-Driven Decision Making in SQL](#2)
+3. [Applying SQL to Real-World Problems](#3)
+4. [Analyzing Business Data in SQL](#4)
+5. [Reporting in SQL](#5)
 
 <a name="1"/>
 # 1. Exploratory Data Analysis in SQL
@@ -535,24 +535,7 @@ ORDER BY revenue.delivr_month ASC;
 
 ## Exploring the Olympics Dataset
 
-{% highlight SQL %}
-
-{% endhighlight %}
-
-
-{% highlight SQL %}
-
-{% endhighlight %}
-
-
-{% highlight SQL %}
-
-{% endhighlight %}
-
-
-{% highlight SQL %}
-
-{% endhighlight %}
+* An E:R diagram visually shows all tables, fields, and relationships in a database.
 
 ## Creating Reports
 
