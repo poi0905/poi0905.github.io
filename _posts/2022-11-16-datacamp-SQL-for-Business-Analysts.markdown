@@ -225,22 +225,9 @@ SELECT revenues_change::integer, COUNT(revenues_change::integer)
 ## Introduction to business intelligence for a online movie rental database
 
 {% highlight SQL %}
-
-{% endhighlight %}
-
-
-{% highlight SQL %}
-
-{% endhighlight %}
-
-
-{% highlight SQL %}
-
-{% endhighlight %}
-
-
-{% highlight SQL %}
-
+SELECT *
+FROM movies
+WHERE genre <> 'Drama'; -- All genres except drama
 {% endhighlight %}
 
 ## Decision Making with simple SQL queries
