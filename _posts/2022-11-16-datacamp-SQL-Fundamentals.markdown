@@ -1056,11 +1056,23 @@ WHERE special_features[2] = 'Deleted Scenes';
 {% endhighlight %}
 
 {% highlight SQL %}
-
+SELECT
+  title, 
+  special_features 
+FROM film 
+-- Modify the query to use the ANY function 
+WHERE 'Trailers' = ANY(special_features);
 {% endhighlight %}
 
-{% highlight SQL %}
+* The contains operator `@>` operator is alternative syntax to the `ANY` function
 
+{% highlight SQL %}
+SELECT 
+  title, 
+  special_features 
+FROM film 
+-- Filter where special_features contains 'Deleted Scenes'
+WHERE special_features @> ARRAY['Deleted Scenes'];
 {% endhighlight %}
 
 
