@@ -110,24 +110,49 @@ SELECT coalesce(fortune500.industry, fortune500.sector, 'Unknown') AS industry2,
  LIMIT 1;
 {% endhighlight %}
 
-
 {% highlight SQL %}
-
+SELECT company_original.name, title, rank
+  -- Start with original company information
+  FROM company AS company_original
+       -- Join to another copy of company with parent
+       -- company information
+	   LEFT JOIN company AS company_parent
+       ON company_original.parent_id = company_parent.id 
+       -- Join to fortune500, only keep rows that match
+       INNER JOIN fortune500 
+       -- Use parent ticker if there is one, 
+       -- otherwise original ticker
+       ON coalesce(company_original.ticker, 
+                   company_parent.ticker) = 
+             fortune500.ticker
+ -- For clarity, order by rank
+ ORDER BY rank; 
 {% endhighlight %}
 
-
 {% highlight SQL %}
-
+-- Select the original value
+SELECT profits_change, 
+	   -- Cast profits_change
+       CAST(profits_change AS integer) AS profits_change_int
+  FROM fortune500;
 {% endhighlight %}
 
+* the first column will be 3; the second column will be 3.3333-
 
 {% highlight SQL %}
-
+-- Divide 10 by 3
+SELECT 10/3, 
+       -- Cast 10 as numeric and divide by 3
+       10::numeric/3;
 {% endhighlight %}
 
-
 {% highlight SQL %}
-
+-- Select the count of each revenues_change integer value
+SELECT revenues_change::integer, COUNT(revenues_change::integer)
+  FROM fortune500
+ GROUP BY revenues_change::integer
+ -- order by the values of revenues_change
+ ORDER BY revenues_change;
 {% endhighlight %}
 
 
