@@ -998,6 +998,39 @@ ORDER BY Event ASC, Gender ASC, Year ASC;
 
 ## Overview of Common Data Types
 
+* Overview of all table
+
+{% highlight SQL %}
+ -- Select all columns from the TABLES system database
+ SELECT * 
+ FROM INFORMATION_SCHEMA.TABLES
+ -- Filter by schema
+ WHERE table_schema = 'public';
+{% endhighlight %}
+
+* Overview of particular table
+
+{% highlight SQL %}
+ -- Select all columns from the COLUMNS system database
+ SELECT * 
+ FROM INFORMATION_SCHEMA.COLUMNS
+ WHERE table_name = 'actor';
+{% endhighlight %}
+
+* Get the column name and data type
+
+{% highlight SQL %}
+SELECT
+ 	column_name, 
+    data_type
+-- From the system database information schema
+FROM INFORMATION_SCHEMA.COLUMNS 
+-- For the customer table
+WHERE table_name = 'customer';
+{% endhighlight %}
+
+* `TIMESTAMP`s contain both a date value and a time value with microsecond precision
+
 {% highlight SQL %}
 
 {% endhighlight %}
