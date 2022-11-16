@@ -193,7 +193,7 @@ ORDER BY language_num DESC;
 *Filtering grouped data: `HAVING`*
 
 * `WHERE` filters individual records
-* `HAVING` filters grouped records
+* **`HAVING` filters grouped records**
 
 {% highlight SQL %}
 -- Select the country and average_budget from films
