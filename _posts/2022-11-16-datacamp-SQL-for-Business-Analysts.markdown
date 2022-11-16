@@ -111,38 +111,433 @@ SELECT coalesce(fortune500.industry, fortune500.sector, 'Unknown') AS industry2,
 {% endhighlight %}
 
 
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
 ## Summarizing and aggregating numeric data
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
 ## Exploring categorical data and unstructured text
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
 ## Working with dates and timestamps
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
 
 <a name="2"/>
 # Data-Driven Decision Making in SQL
 
 ## Introduction to business intelligence for a online movie rental database
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
 ## Decision Making with simple SQL queries
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
 ## Data Driven Decision Making with advanced SQL queries
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
 ## Data Driven Decision Making with OLAP SQL queries
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
 
 <a name="3"/>
 # Applying SQL to Real-World Problems
 
 ## Use Real-World SQL
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
 ## Find Your Data
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
 ## Manage Your Data
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
 ## Best Practices for Writing SQL
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
 
 <a name="4"/>
 # Analyzing Business Data in SQL
 
 ## Revenue, Cost, and Profit
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
 ## User-Centric KPIs
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
 ## ARPU, Histograms, and Percentiles
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
 ## Generating an Executive Report
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
 
 <a name="5"/>
 # Reporting in SQL
 
 ## Exploring the Olympics Dataset
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
 ## Creating Reports
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
 ## Cleaning & Validation
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
 ## Complex Calculations
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
+
+
+{% highlight SQL %}
+
+{% endhighlight %}
