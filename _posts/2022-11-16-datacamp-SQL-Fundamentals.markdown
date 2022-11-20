@@ -829,6 +829,32 @@ ON home.id = away.id;
 
 ## Window Functions
 
+The `OVER()` clause allows you to pass an aggregate function down a data set, similar to subqueries in `SELECT`. The `OVER()` clause offers significant benefits over subqueries in select -- namely, your queries will run faster, and the `OVER()` clause has a wide range of additional functions and clauses you can include with it that we will cover later on in this chapter.
+
+**Same Result**
+
+{% highlight SQL %}
+SELECT
+  date,
+  (home_goal + away_goal) AS goals,
+  (SELECT AVG(home_goal + away_goal)
+    FROM match
+    WHERE season = '2011/2012') AS overall_avg
+FROM match
+WHERE season = '2011/2012';
+{% endhighlight %}
+
+**Same Result**
+
+{% highlight SQL %}
+SELECT 
+  date,
+  (home_goal + away_goal) AS goals,
+  AVG(home_goal + away_goal) OVER() AS overall_avg
+FROM match
+WHERE season = '2011/2012'
+{% endhighlight %}
+
 {% highlight SQL %}
 
 {% endhighlight %}
