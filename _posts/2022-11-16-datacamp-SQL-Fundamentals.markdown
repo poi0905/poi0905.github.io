@@ -831,8 +831,6 @@ ON home.id = away.id;
 
 The `OVER()` clause allows you to pass an aggregate function down a data set, similar to subqueries in `SELECT`. The `OVER()` clause offers significant benefits over subqueries in select -- namely, your queries will run faster, and the `OVER()` clause has a wide range of additional functions and clauses you can include with it that we will cover later on in this chapter.
 
-**Same Result**
-
 {% highlight SQL %}
 SELECT
   date,
@@ -844,7 +842,7 @@ FROM match
 WHERE season = '2011/2012';
 {% endhighlight %}
 
-**Same Result**
+**Same Result as Above**
 
 {% highlight SQL %}
 SELECT 
@@ -852,19 +850,49 @@ SELECT
   (home_goal + away_goal) AS goals,
   AVG(home_goal + away_goal) OVER() AS overall_avg
 FROM match
-WHERE season = '2011/2012'
+WHERE season = '2011/2012';
+{% endhighlight %}
+
+**`RANK()`**
+
+{% highlight SQL %}
+SELECT 
+  date,
+  home_goal + away_goal) AS goals,
+  RANK() OVER(ORDER BY home_goal + away_goal DESC) AS goals_rank
+FROM match
+WHERE season = '2011/2012';
 {% endhighlight %}
 
 {% highlight SQL %}
-
+SELECT 
+	-- Select the league name and average goals scored
+	l.name AS league,
+    AVG(m.home_goal + m.away_goal) AS avg_goals,
+    -- Rank leagues in descending order by average goals
+    RANK() OVER(ORDER BY AVG(m.home_goal + m.away_goal) DESC) AS league_rank
+FROM league AS l
+LEFT JOIN match AS m 
+ON l.id = m.country_id
+WHERE m.season = '2011/2012'
+GROUP BY l.name
+-- Order the query by the rank you created
+ORDER BY league_rank;
 {% endhighlight %}
 
+**`OVER` with a PARTITION**
+
+*`PARTITION` by Multiple Columns*
+
 {% highlight SQL %}
-
-{% endhighlight %}
-
-{% highlight SQL %}
-
+SELECT  
+  c.name,  
+  m.season,  
+  (home_goal + away_goal) AS goals,
+  AVG(home_goal + away_goal) OVER(PARTITION BY m.season, c.name) AS season_ctry_avg
+FROM country AS c 
+LEFT JOIN match AS m 
+ON c.id = m.country_id;
 {% endhighlight %}
 
 {% highlight SQL %}
