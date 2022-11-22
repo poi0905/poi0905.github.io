@@ -1138,15 +1138,46 @@ ORDER BY Country ASC, Year ASC;
 {% endhighlight %}
 
 {% highlight SQL %}
+WITH Chinese_Medals AS (
+  SELECT
+    Athlete, COUNT(*) AS Medals
+  FROM Summer_Medals
+  WHERE
+    Country = 'CHN' AND Medal = 'Gold'
+    AND Year >= 2000
+  GROUP BY Athlete)
 
+SELECT
+  -- Select the athletes and the medals they've earned
+  Athlete,
+  Medals,
+  -- Get the max of the last two and current rows' medals 
+  MAX(Medals) OVER (ORDER BY Athlete ASC
+            ROWS BETWEEN 2 PRECEDING
+            AND CURRENT ROW) AS Max_Medals
+FROM Chinese_Medals
+ORDER BY Athlete ASC;
 {% endhighlight %}
 
-{% highlight SQL %}
-
-{% endhighlight %}
+**Moving Average**
 
 {% highlight SQL %}
+WITH Country_Medals AS (
+  SELECT
+    Year, Country, COUNT(*) AS Medals
+  FROM Summer_Medals
+  GROUP BY Year, Country)
 
+SELECT
+  Year, Country, Medals,
+  -- Calculate each country's 3-game moving total
+  SUM(Medals) OVER
+    (PARTITION BY Country
+     ORDER BY Year ASC
+     ROWS BETWEEN
+     2 PRECEDING AND CURRENT ROW) AS Medals_MA
+FROM Country_Medals
+ORDER BY Country ASC, Year ASC;
 {% endhighlight %}
 
 
