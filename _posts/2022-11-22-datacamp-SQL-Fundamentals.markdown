@@ -1114,6 +1114,8 @@ ORDER BY Third ASC;
 
 ## Aggregate window functions and frames
 
+[Slide](https://gntuedutw-my.sharepoint.com/:b:/g/personal/b07302230_g_ntu_edu_tw/EenmlKNSwZ1Ikqonw2uepvQBVpbLl1nfCPrC4Vs0bGxFLg?e=LaEVhF)
+
 {% highlight SQL %}
 
 {% endhighlight %}
