@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  SQL Fundamentals
-date:   2022-11-15 00:00:55 +0800
+date:   2022-11-22 00:00:55 +0800
 image:  SQL101.jpg
 tags:   SQL
 categories: [SQL]
@@ -831,7 +831,7 @@ ON home.id = away.id;
 
 The `OVER()` clause allows you to pass an aggregate function down a data set, similar to subqueries in `SELECT`. The `OVER()` clause offers significant benefits over subqueries in select -- namely, your queries will run faster, and the `OVER()` clause has a wide range of additional functions and clauses you can include with it that we will cover later on in this chapter.
 
-Also: [Reference](https://medium.com/%E6%95%B8%E6%93%9A%E4%B8%8D%E6%AD%A2-not-only-data/%E5%A6%82%E4%BD%95%E5%8D%81%E5%88%86%E9%90%98%E5%85%A7%E5%BF%AB%E9%80%9F%E4%B8%8A%E6%89%8B%E8%88%87%E4%BD%BF%E7%94%A8-window-function-e24e0a7e75ba)
+[Slide](https://gntuedutw-my.sharepoint.com/:b:/g/personal/b07302230_g_ntu_edu_tw/EYIb4XAmgPBKtmOBXs-9DbEB10YlJTxVw_WyWk9G7zrzzQ?e=6B2PHF)
 
 {% highlight SQL %}
 SELECT
@@ -973,6 +973,8 @@ WHERE m.season = '2014/2015'
 
 ## Introduction to window functions
 
+[Slide](https://gntuedutw-my.sharepoint.com/:b:/g/personal/b07302230_g_ntu_edu_tw/Ed3z7Zu2P2hIlRIdArYNb_cBfMUlVkwXd5663koyo8pzdA?e=566iF4)
+
 -	Numbering rows allows you to easily fetch the nth row. 
 
 {% highlight SQL %}
@@ -1062,8 +1064,28 @@ ORDER BY Event ASC, Gender ASC, Year ASC;
 
 ## Fetching, ranking, and paging
 
-{% highlight SQL %}
+[Slide](https://gntuedutw-my.sharepoint.com/:b:/g/personal/b07302230_g_ntu_edu_tw/EYI74tUiQyJKi6F-UF_6_ZQBSFM28so35j4BKTH0Ne5Twg?e=El7AcL)
 
+{% highlight SQL %}
+WITH Athlete_Medals AS (
+  SELECT
+    Country, Athlete, COUNT(*) AS Medals
+  FROM Summer_Medals
+  WHERE
+    Country IN ('JPN', 'KOR')
+    AND Year >= 2000
+  GROUP BY Country, Athlete
+  HAVING COUNT(*) > 1)
+
+SELECT
+  Country,
+  -- Rank athletes in each country by the medals they've won
+  Athlete,
+  DENSE_RANK()
+    OVER(PARTITION BY Country
+         ORDER BY Medals DESC) AS Rank_N
+FROM Athlete_Medals
+ORDER BY Country ASC, RANK_N ASC;
 {% endhighlight %}
 
 {% highlight SQL %}
