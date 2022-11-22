@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  SQL Fundamentals
-date:   2022-11-22 00:00:55 +0800
+date:   2022-11-21 00:00:55 +0800
 image:  SQL101.jpg
 tags:   SQL
 categories: [SQL]
@@ -1117,7 +1117,24 @@ ORDER BY Third ASC;
 [Slide](https://gntuedutw-my.sharepoint.com/:b:/g/personal/b07302230_g_ntu_edu_tw/EenmlKNSwZ1Ikqonw2uepvQBVpbLl1nfCPrC4Vs0bGxFLg?e=LaEVhF)
 
 {% highlight SQL %}
+WITH Country_Medals AS (
+  SELECT
+    Year, Country, COUNT(*) AS Medals
+  FROM Summer_Medals
+  WHERE
+    Country IN ('CHN', 'KOR', 'JPN')
+    AND Medal = 'Gold' AND Year >= 2000
+  GROUP BY Year, Country)
 
+SELECT
+  -- Return the max medals earned so far per country
+  Country,
+  Year,
+  Medals,
+  MAX(Medals) OVER (PARTITION BY Country
+                ORDER BY Year ASC) AS Max_Medals
+FROM Country_Medals
+ORDER BY Country ASC, Year ASC;
 {% endhighlight %}
 
 {% highlight SQL %}
