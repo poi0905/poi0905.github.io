@@ -1363,19 +1363,51 @@ WHERE special_features @> ARRAY['Deleted Scenes'];
 [Slide](https://gntuedutw-my.sharepoint.com/:b:/g/personal/b07302230_g_ntu_edu_tw/EQd6zHGjIIJLvkIPv68tfkcBuFd6kS321V8dsPL6HCioSw?e=trVmVk)
 
 {% highlight SQL %}
-
+SELECT
+    f.title,
+	r.rental_date,
+    f.rental_duration,
+    -- Add the rental duration to the rental date
+    INTERVAL '1' day * f.rental_duration + r.rental_date AS expected_return_date,
+    r.return_date
+FROM film AS f
+    INNER JOIN inventory AS i ON f.film_id = i.film_id
+    INNER JOIN rental AS r ON i.inventory_id = r.inventory_id
+ORDER BY f.title;
 {% endhighlight %}
 
 {% highlight SQL %}
-
+SELECT
+	CURRENT_TIMESTAMP(0)::timestamp AS right_now,
+    interval '5 days' + CURRENT_TIMESTAMP(0) AS five_days_from_now;
 {% endhighlight %}
 
 {% highlight SQL %}
-
-{% endhighlight %}
-
-{% highlight SQL %}
-
+SELECT 
+  c.first_name || ' ' || c.last_name AS customer_name,
+  f.title,
+  r.rental_date,
+  -- Extract the day of week date part from the rental_date
+  EXTRACT(dow FROM r.rental_date) AS dayofweek,
+  AGE(r.return_date, r.rental_date) AS rental_days,
+  -- Use DATE_TRUNC to get days from the AGE function
+  CASE WHEN DATE_TRUNC('day', AGE(r.return_date, r.rental_date)) > 
+  -- Calculate number of d
+    f.rental_duration * INTERVAL '1' day 
+  THEN TRUE 
+  ELSE FALSE END AS past_due 
+FROM 
+  film AS f 
+  INNER JOIN inventory AS i 
+  	ON f.film_id = i.film_id 
+  INNER JOIN rental AS r 
+  	ON i.inventory_id = r.inventory_id 
+  INNER JOIN customer AS c 
+  	ON c.customer_id = r.customer_id 
+WHERE 
+  -- Use an INTERVAL for the upper bound of the rental_date 
+  r.rental_date BETWEEN CAST('2005-05-01' AS DATE) 
+  AND CAST('2005-05-01' AS DATE) + INTERVAL '90 day';
 {% endhighlight %}
 
 
