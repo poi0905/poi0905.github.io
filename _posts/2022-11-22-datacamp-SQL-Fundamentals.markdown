@@ -1469,17 +1469,39 @@ FROM
 [Slide](https://gntuedutw-my.sharepoint.com/:b:/g/personal/b07302230_g_ntu_edu_tw/EWvGgulTA9VAhLy_7qlF7tQB3-3DE1AgkviNA2qWiIB4nA?e=LSSqby)
 
 {% highlight SQL %}
-
+-- Select the title and description
+SELECT title, description
+FROM film
+-- Convert the title to a tsvector and match it against the tsquery 
+WHERE to_tsvector(title) @@ to_tsquery('elf');
 {% endhighlight %}
 
 {% highlight SQL %}
-
+-- Select the film title and inventory ids
+SELECT 
+	f.title, 
+    i.inventory_id,
+    -- Determine whether the inventory is held by a customer
+    inventory_held_by_customer(i.inventory_id) as held_by_cust
+FROM film as f 
+	INNER JOIN inventory AS i ON f.film_id=i.film_id 
+WHERE
+	-- Only include results where the held_by_cust is not null
+    inventory_held_by_customer(i.inventory_id) IS NOT NULL
 {% endhighlight %}
 
 {% highlight SQL %}
-
+SELECT 
+  title, 
+  description, 
+  -- Calculate the similarity
+  similarity(description, 'Astounding & Drama')
+FROM 
+  film 
+WHERE 
+  to_tsvector(description) @@ 
+  to_tsquery('Astounding & Drama') 
+ORDER BY 
+	similarity(description, title) DESC;
 {% endhighlight %}
 
-{% highlight SQL %}
-
-{% endhighlight %}
