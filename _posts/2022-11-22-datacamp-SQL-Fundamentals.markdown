@@ -1278,6 +1278,8 @@ WHERE RANK <= 3;
 
 ## Overview of Common Data Types
 
+[Slide](https://gntuedutw-my.sharepoint.com/:b:/g/personal/b07302230_g_ntu_edu_tw/EQXI6AqOKLxNtOu8i6hnIkIBzCwkh3dwLb9z21ao2EE0Ew?e=yk6EEh)
+
 * Overview of all table
 
 {% highlight SQL %}
@@ -1358,6 +1360,8 @@ WHERE special_features @> ARRAY['Deleted Scenes'];
 
 ## Working with DATE/TIME Functions and Operators
 
+[Slide](https://gntuedutw-my.sharepoint.com/:b:/g/personal/b07302230_g_ntu_edu_tw/EQd6zHGjIIJLvkIPv68tfkcBuFd6kS321V8dsPL6HCioSw?e=trVmVk)
+
 {% highlight SQL %}
 
 {% endhighlight %}
@@ -1377,6 +1381,8 @@ WHERE special_features @> ARRAY['Deleted Scenes'];
 
 ## Parsing and Manipulating Text
 
+[Slide](https://gntuedutw-my.sharepoint.com/:b:/g/personal/b07302230_g_ntu_edu_tw/EXaLdk5Cp55FrxgyPyy7AtABLP9bqPELsWoZOug2cULn1A?e=Ta81TU)
+
 {% highlight SQL %}
 
 {% endhighlight %}
@@ -1394,6 +1400,8 @@ WHERE special_features @> ARRAY['Deleted Scenes'];
 {% endhighlight %}
 
 ## Full-text Search and PostgresSQL Extensions
+
+[Slide](https://gntuedutw-my.sharepoint.com/:b:/g/personal/b07302230_g_ntu_edu_tw/EWvGgulTA9VAhLy_7qlF7tQB3-3DE1AgkviNA2qWiIB4nA?e=LSSqby)
 
 {% highlight SQL %}
 
