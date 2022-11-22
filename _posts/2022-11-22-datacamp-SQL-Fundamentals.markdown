@@ -1183,6 +1183,8 @@ ORDER BY Country ASC, Year ASC;
 
 ## Beyond window functions
 
+[Slide](https://gntuedutw-my.sharepoint.com/:b:/g/personal/b07302230_g_ntu_edu_tw/EZkfgkMhvdhPnh1Cj7ffqv0BOsdzMNkrmW83Qt7vt_1a-g?e=UghUUd)
+
 {% highlight SQL %}
 
 {% endhighlight %}
