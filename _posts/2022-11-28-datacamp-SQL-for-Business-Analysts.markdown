@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  SQL for Business Analysts
-date:   2022-11-15 18:05:55 +0800
+date:   2022-11-27 18:05:55 +0800
 image:  SQL.jpg
 tags:   SQL
 categories: [SQL]
@@ -22,16 +22,9 @@ Boost your business SQL skills. Whether you’re in marketing, finance, or produ
 <a name="1"/>
 # 1. Exploratory Data Analysis in SQL
 
-## What's in the database?
+[Slide](https://gntuedutw-my.sharepoint.com/:f:/g/personal/b07302230_g_ntu_edu_tw/EhWSHqEj2AtHgDNmA0drFfwBNfYCJUDSPLWgI4tzTTJMAA?e=QSUCoo)
 
-|Code                             |     Note                             |   
-|---------------------------------|--------------------------------------|
-|`NULL`                           | missing                              |
-|`NULL, IS NOT NULL`              | don't use = `NULL`                   | 
-|`count(*)`                       | number of rows                       |
-|`count(column_name)`             | number of non-`NULL` values          |
-|`count(DISTINCT column_name)`    | number of different non-`NULL` values|   
-|`SELECT DISTINCT column_name ...`| distinct values, including `NULL`    | 
+## What's in the database?
 
 {% highlight SQL %}
 SELECT count(*) - count(ticker) AS missing
@@ -222,6 +215,8 @@ SELECT revenues_change::integer, COUNT(revenues_change::integer)
 <a name="2"/>
 # 2. Data-Driven Decision Making in SQL
 
+[Slide](https://gntuedutw-my.sharepoint.com/:f:/g/personal/b07302230_g_ntu_edu_tw/ErOJ9kVsJvtCg0B4Z_iZQa4BFEaN21n8YkavnXShFKYipg?e=FB47O2)
+
 ## Introduction to business intelligence for a online movie rental database
 
 {% highlight SQL %}
@@ -295,6 +290,8 @@ WHERE genre <> 'Drama'; -- All genres except drama
 
 <a name="3"/>
 # 3. Applying SQL to Real-World Problems
+
+[Slide](https://gntuedutw-my.sharepoint.com/:f:/g/personal/b07302230_g_ntu_edu_tw/Em8nWlAD7FRJu6xjAWs5778BDqdBbAJRxdsqeIy_H5iSDw?e=w6dnKJ)
 
 ## Use Real-World SQL
 
@@ -380,6 +377,8 @@ GROUP BY name;
 
 <a name="4"/>
 # 4. Analyzing Business Data in SQL
+
+[Slide](https://gntuedutw-my.sharepoint.com/:f:/g/personal/b07302230_g_ntu_edu_tw/EldFo3iCY8tFvoPp76oxfCwB76YvkxbM0oHj-iwsi-hBBg?e=F0ZZcR)
 
 ## Revenue, Cost, and Profit
 
@@ -532,6 +531,8 @@ ORDER BY revenue.delivr_month ASC;
 
 <a name="5"/>
 # 5. Reporting in SQL
+
+[Slide](https://gntuedutw-my.sharepoint.com/:f:/g/personal/b07302230_g_ntu_edu_tw/EvS3YP4JgWJLqrDLCv144wYBBL90Tbp5Rd9twCdA1t1UqA?e=GnAzCF)
 
 ## Exploring the Olympics Dataset
 
