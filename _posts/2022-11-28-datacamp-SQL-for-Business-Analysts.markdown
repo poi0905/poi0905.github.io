@@ -354,22 +354,57 @@ SELECT priority,
 ## Working with dates and timestamps
 
 {% highlight SQL %}
-
+-- Select name of the day of the week the request was created 
+SELECT to_char(date_created, 'day') AS day, 
+       -- Select avg time between request creation and completion
+       avg(date_completed - date_created) AS duration
+  FROM evanston311 
+ -- Group by the name of the day of the week and 
+ -- integer value of day of week the request was created
+ GROUP BY day, EXTRACT(DOW FROM date_created)
+ -- Order by integer value of the day of the week 
+ -- the request was created
+ ORDER BY EXTRACT(DOW FROM date_created);
 {% endhighlight %}
 
 
 {% highlight SQL %}
-
+-- Aggregate daily counts by month
+SELECT date_trunc('month', day) AS month,
+       avg(count)
+  -- Subquery to compute daily counts
+  FROM (SELECT date_trunc('day', date_created) AS day,
+               count(*) AS count
+          FROM evanston311
+         GROUP BY day) AS daily_count
+ GROUP BY month
+ ORDER BY month;
 {% endhighlight %}
 
 
 {% highlight SQL %}
-
-{% endhighlight %}
-
-
-{% highlight SQL %}
-
+-- Compute monthly counts of requests created
+WITH created AS (
+       SELECT date_trunc('month', date_created) AS month,
+              count(*) AS created_count
+         FROM evanston311
+        WHERE category='Rodents- Rats'
+        GROUP BY month),
+-- Compute monthly counts of requests completed
+      completed AS (
+       SELECT date_trunc('month', date_completed) AS month,
+              count(*) AS completed_count
+         FROM evanston311
+        WHERE category='Rodents- Rats'
+        GROUP BY month)
+-- Join monthly created and completed counts
+SELECT created.month, 
+       created_count, 
+       completed_count
+  FROM created
+       INNER JOIN completed
+       ON created.month=completed.month
+ ORDER BY created.month;
 {% endhighlight %}
 
 <a name="2"/>
