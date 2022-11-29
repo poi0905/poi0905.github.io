@@ -281,23 +281,75 @@ SELECT measure,
 ## Exploring categorical data and unstructured text
 
 {% highlight SQL %}
-
+-- Select the first 50 chars when length is greater than 50
+SELECT CASE WHEN length(description) > 50
+            THEN left(description, 50) || '...'
+       -- otherwise just select description
+       ELSE description
+       END
+  FROM evanston311
+ -- limit to descriptions that start with the word I
+ WHERE description LIKE 'I %'
+ ORDER BY description;
 {% endhighlight %}
 
 
 {% highlight SQL %}
+-- Code from previous step
+DROP TABLE IF EXISTS recode;
+CREATE TEMP TABLE recode AS
+  SELECT DISTINCT category, 
+         rtrim(split_part(category, '-', 1)) AS standardized
+  FROM evanston311;
+UPDATE recode SET standardized='Trash Cart' 
+ WHERE standardized LIKE 'Trash%Cart';
+UPDATE recode SET standardized='Snow Removal' 
+ WHERE standardized LIKE 'Snow%Removal%';
+UPDATE recode SET standardized='UNUSED' 
+ WHERE standardized IN ('THIS REQUEST IS INACTIVE...Trash Cart', 
+               '(DO NOT USE) Water Bill',
+               'DO NOT USE Trash', 'NO LONGER IN USE');
 
+-- Select the recoded categories and the count of each
+SELECT standardized, COUNT(*)
+-- From the original table and table with recoded values
+  FROM evanston311 
+       LEFT JOIN recode 
+       -- What column do they have in common?
+       ON evanston311.category = recode.category
+ -- What do you need to group by to count?
+ GROUP BY standardized
+ -- Display the most common val values first
+ ORDER BY COUNT DESC;
 {% endhighlight %}
 
+*Create and store indicator variables for email and phone in a temporary table. `LIKE` produces True or False as a result, but casting a boolean (True or False) as an `integer` converts True to 1 and False to 0. This makes the values easier to summarize later.*
 
 {% highlight SQL %}
+-- To clear table if it already exists
+DROP TABLE IF EXISTS indicators;
 
+-- Create the temp table
+CREATE TEMP TABLE indicators AS
+  SELECT id, 
+         CAST (description LIKE '%@%' AS integer) AS email,
+         CAST (description LIKE '%___-___-____%' AS integer) AS phone 
+    FROM evanston311;
+  
+-- Select the column you'll group by
+SELECT priority,
+       -- Compute the proportion of rows with each indicator
+       SUM(email)/COUNT(*)::numeric AS email_prop, 
+       SUM(phone)/COUNT(*)::numeric AS phone_prop
+  -- Tables to select from
+  FROM evanston311
+       LEFT JOIN indicators
+       -- Joining condition
+       ON evanston311.id=indicators.id
+ -- What are you grouping by?
+ GROUP BY priority;
 {% endhighlight %}
 
-
-{% highlight SQL %}
-
-{% endhighlight %}
 
 ## Working with dates and timestamps
 
