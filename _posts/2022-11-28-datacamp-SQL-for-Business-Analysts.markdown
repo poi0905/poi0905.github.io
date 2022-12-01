@@ -502,29 +502,53 @@ GROUP BY name;
 
 ## Find Your Data
 
-{% highlight SQL %}
+What tables are in my database?
 
+{% highlight SQL %}
+SELECT *
+FROM pg_catalog.pg_tables
+WHERE schemaname = 'public';
 {% endhighlight %}
 
+A **VIEW** is a virtual table.
 
 {% highlight SQL %}
+-- Create a new view called table_columns
+CREATE VIEW table_columns AS
+SELECT table_name, 
+	   STRING_AGG(column_name, ', ') AS columns
+FROM information_schema.columns
+WHERE table_schema = 'public'
+GROUP BY table_name;
 
-{% endhighlight %}
-
-
-{% highlight SQL %}
-
-{% endhighlight %}
-
-
-{% highlight SQL %}
-
+-- Query the newly created view table_columns
+SELECT *
+FROM table_columns;
 {% endhighlight %}
 
 ## Manage Your Data
 
-{% highlight SQL %}
+**Create a TABLE using new data**
 
+{% highlight SQL %}
+-- Create a new table called oscars
+CREATE TABLE oscars (
+    title VARCHAR,
+    award VARCHAR
+);
+
+-- Insert the data into the oscars table
+INSERT INTO oscars (title, award)
+VALUES
+('TRANSLATION SUMMER', 'Best Film'),
+('DORADO NOTTING', 'Best Film'),
+('MARS ROMAN', 'Best Film'),
+('CUPBOARD SINNERS', 'Best Film'),
+('LONELY ELEPHANT', 'Best Film');
+
+-- Confirm the table was created and is populated
+SELECT * 
+FROM oscars;
 {% endhighlight %}
 
 
