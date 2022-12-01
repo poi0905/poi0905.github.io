@@ -551,19 +551,40 @@ SELECT *
 FROM oscars;
 {% endhighlight %}
 
+**Create a TABLE using existing data**
 
 {% highlight SQL %}
+-- Create a new table named family_films using this query
+CREATE TABLE family_films AS
+SELECT *
+FROM film
+WHERE rating IN ('G', 'PG');
+{% endhighlight %}
 
+**Be careful when modifying tables**
+
+{% highlight SQL %}
+UPDATE film
+SET rental_rate = rental_rate-1
+WHERE film_id IN
+  (SELECT film_id from actor AS a
+   INNER JOIN film_actor AS f
+      ON a.actor_id = f.actor_id
+   WHERE last_name IN ('WILLIS', 'CHASE', 'WINSLET', 'GUINESS', 'HUDSON'));
 {% endhighlight %}
 
 
 {% highlight SQL %}
+-- Use the list of film_id values to DELETE all R & NC-17 rated films from inventory.
+DELETE FROM inventory
+WHERE film_id IN (
+  SELECT film_id FROM film
+  WHERE rating IN ('R', 'NC-17')
+);
 
-{% endhighlight %}
-
-
-{% highlight SQL %}
-
+-- Delete records from the `film` table that are either rated as R or NC-17.
+DELETE FROM film
+WHERE rating IN ('R', 'NC-17');
 {% endhighlight %}
 
 ## Best Practices for Writing SQL
