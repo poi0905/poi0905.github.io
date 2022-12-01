@@ -589,24 +589,7 @@ WHERE rating IN ('R', 'NC-17');
 
 ## Best Practices for Writing SQL
 
-{% highlight SQL %}
-
-{% endhighlight %}
-
-
-{% highlight SQL %}
-
-{% endhighlight %}
-
-
-{% highlight SQL %}
-
-{% endhighlight %}
-
-
-{% highlight SQL %}
-
-{% endhighlight %}
+**ensure that the SQL scripts you write will be easy to understand!**
 
 <a name="4"/>
 # 4. Analyzing Business Data in SQL
