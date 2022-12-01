@@ -422,65 +422,58 @@ WHERE genre <> 'Drama'; -- All genres except drama
 
 ## Decision Making with simple SQL queries
 
-{% highlight SQL %}
-
-{% endhighlight %}
-
-
-{% highlight SQL %}
-
-{% endhighlight %}
-
-
-{% highlight SQL %}
-
-{% endhighlight %}
-
-
-{% highlight SQL %}
-
-{% endhighlight %}
 
 ## Data Driven Decision Making with advanced SQL queries
 
 {% highlight SQL %}
-
-{% endhighlight %}
-
-
-{% highlight SQL %}
-
-{% endhighlight %}
-
-
-{% highlight SQL %}
-
-{% endhighlight %}
-
-
-{% highlight SQL %}
-
+SELECT *
+FROM customers as c -- Select all customers with at least one rating
+WHERE EXISTS
+	(SELECT *
+	FROM renting AS r
+	WHERE rating IS NOT NULL 
+	AND r.customer_id = c.customer_id);
 {% endhighlight %}
 
 ## Data Driven Decision Making with OLAP SQL queries
 
 {% highlight SQL %}
-
+SELECT genre,
+       year_of_release,
+       COUNT(*)
+FROM movies
+GROUP BY CUBE (genre, year_of_release)
+ORDER BY year_of_release;
 {% endhighlight %}
 
 
 {% highlight SQL %}
-
+-- Group by each county and genre with OLAP extension
+SELECT 
+	c.country, 
+	m.genre, 
+	AVG(r.rating) AS avg_rating, 
+	COUNT(*) AS num_rating
+FROM renting AS r
+LEFT JOIN movies AS m
+ON m.movie_id = r.movie_id
+LEFT JOIN customers AS c
+ON r.customer_id = c.customer_id
+GROUP BY ROLLUP (c.country, m.genre)
+ORDER BY c.country, m.genre;
 {% endhighlight %}
 
 
 {% highlight SQL %}
-
-{% endhighlight %}
-
-
-{% highlight SQL %}
-
+SELECT 
+	c.country, 
+    c.gender,
+	AVG(r.rating)
+FROM renting AS r
+LEFT JOIN customers AS c
+ON r.customer_id = c.customer_id
+-- Report all info from a Pivot table for country and gender
+GROUP BY GROUPING SETS ((country, gender), (country), (gender), ());
 {% endhighlight %}
 
 <a name="3"/>
