@@ -780,17 +780,70 @@ ORDER BY previous.delivr_month ASC;
 *ARPU*
 
 {% highlight SQL %}
+WITH kpi AS (
+  SELECT
+    -- Select the week, revenue, and count of users
+    DATE_TRUNC('week', o.order_date) :: DATE AS delivr_week,
+    SUM(m.meal_price * o.order_quantity) AS revenue,
+    COUNT(DISTINCT o.user_id) AS users
+  FROM meals AS m
+  JOIN orders AS o ON m.meal_id = o.meal_id
+  GROUP BY delivr_week)
 
+SELECT
+  delivr_week,
+  -- Calculate ARPU
+  ROUND(
+    revenue :: NUMERIC / GREATEST(users,1),
+  2) AS arpu
+FROM kpi
+-- Order by week in ascending order
+ORDER BY delivr_week ASC;
 {% endhighlight %}
 
+*Histogram*
 
 {% highlight SQL %}
+WITH user_revenues AS (
+  SELECT
+    -- Select the user ID and revenue
+    user_id,
+    SUM(o.order_quantity * m.meal_price) AS revenue
+  FROM meals AS m
+  JOIN orders AS o ON m.meal_id = o.meal_id
+  GROUP BY user_id)
 
+SELECT
+  -- Return the frequency table of revenues by user
+  ROUND(revenue :: NUMERIC, -2) AS revenue_100,
+  COUNT(DISTINCT user_id) AS users
+FROM user_revenues
+GROUP BY revenue_100
+ORDER BY revenue_100 ASC;
 {% endhighlight %}
 
+*Bucketing users*
 
 {% highlight SQL %}
+WITH user_revenues AS (
+  SELECT
+    -- Select the user IDs and the revenues they generate
+    o.user_id,
+    SUM(m.meal_price * o.order_quantity) AS revenue
+  FROM meals AS m
+  JOIN orders AS o ON m.meal_id = o.meal_id
+  GROUP BY user_id)
 
+SELECT
+  -- Fill in the bucketing conditions
+  CASE
+    WHEN revenue < 150 THEN 'Low-revenue users'
+    WHEN revenue < 300 THEN 'Mid-revenue users'
+    ELSE 'High-revenue users'
+  END AS revenue_group,
+  COUNT(DISTINCT user_id) AS users
+FROM user_revenues
+GROUP BY revenue_group;
 {% endhighlight %}
 
 
