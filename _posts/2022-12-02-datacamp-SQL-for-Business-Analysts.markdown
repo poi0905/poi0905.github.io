@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  SQL for Business Analysts
-date:   2022-11-27 18:05:55 +0800
+date:   2022-12-01 18:05:55 +0800
 image:  SQL.jpg
 tags:   SQL
 categories: [SQL]
@@ -965,24 +965,7 @@ ORDER BY "Q4 2018";
 
 ## Creating Reports
 
-{% highlight SQL %}
 
-{% endhighlight %}
-
-
-{% highlight SQL %}
-
-{% endhighlight %}
-
-
-{% highlight SQL %}
-
-{% endhighlight %}
-
-
-{% highlight SQL %}
-
-{% endhighlight %}
 
 ## Cleaning & Validation
 
