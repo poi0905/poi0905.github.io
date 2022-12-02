@@ -719,17 +719,65 @@ FROM mau
 ORDER BY delivr_month ASC;
 {% endhighlight %}
 
+*Growth rate*
 
 {% highlight SQL %}
+WITH orders AS (
+  SELECT
+    DATE_TRUNC('month', order_date) :: DATE AS delivr_month,
+    --  Count the unique order IDs
+    COUNT(DISTINCT order_id) AS orders
+  FROM orders
+  GROUP BY delivr_month),
 
+  orders_with_lag AS (
+  SELECT
+    delivr_month,
+    -- Fetch each month's current and previous orders
+    orders,
+    COALESCE(
+      LAG(orders) OVER (ORDER BY delivr_month ASC),
+    1) AS last_orders
+  FROM orders)
+
+SELECT
+  delivr_month,
+  -- Calculate the MoM order growth rate
+  ROUND(
+    (orders - last_orders) :: numeric / last_orders,
+  2) AS growth
+FROM orders_with_lag
+ORDER BY delivr_month ASC;
 {% endhighlight %}
 
+*Retention rate*
 
 {% highlight SQL %}
+WITH user_monthly_activity AS (
+  SELECT DISTINCT
+    DATE_TRUNC('month', order_date) :: DATE AS delivr_month,
+    user_id
+  FROM orders)
 
+SELECT
+  -- Calculate the MoM retention rates
+  previous.delivr_month,
+  ROUND(
+    COUNT(DISTINCT current.user_id) :: NUMERIC /
+    GREATEST(COUNT(DISTINCT previous.user_id), 1),
+  2) AS retention_rate
+FROM user_monthly_activity AS previous
+LEFT JOIN user_monthly_activity AS current
+-- Fill in the user and month join conditions
+ON previous.user_id = current.user_id
+AND previous.delivr_month = (current.delivr_month - INTERVAL '1 month')
+GROUP BY previous.delivr_month
+ORDER BY previous.delivr_month ASC;
 {% endhighlight %}
 
 ## ARPU, Histograms, and Percentiles
+
+*ARPU*
 
 {% highlight SQL %}
 
