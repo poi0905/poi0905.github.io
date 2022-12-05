@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  SQL for Business Analysts
-date:   2022-12-01 18:05:55 +0800
+date:   2022-12-04 00:05:55 +0800
 image:  SQL.jpg
 tags:   SQL
 categories: [SQL]
