@@ -1009,17 +1009,75 @@ LIMIT 25;
 ## Complex Calculations
 
 {% highlight SQL %}
-
+-- Query region, athlete name, and total_golds
+SELECT 
+	region,
+    athlete_name,
+    total_golds
+FROM
+    (SELECT 
+		-- Query region, athlete_name, and total gold medals
+        region, 
+        name AS athlete_name, 
+        SUM(gold) AS total_golds,
+        -- Assign a regional rank to each athlete
+        ROW_NUMBER() OVER (PARTITION BY region ORDER BY SUM(gold) DESC) AS row_num
+    FROM summer_games_clean AS s
+    JOIN athletes AS a
+    ON a.id = s.athlete_id
+    JOIN countries AS c
+    ON s.country_id = c.id
+    -- Alias as subquery
+    GROUP BY region, athlete_name) AS subquery
+-- Filter for only the top athlete per region
+WHERE row_num = 1;
 {% endhighlight %}
 
 
 {% highlight SQL %}
-
+-- Pull country_gdp by region and country
+SELECT 
+	region,
+    country,
+	SUM(gdp) AS country_gdp,
+    -- Calculate the global gdp
+    SUM(SUM(gdp)) OVER () AS global_gdp,
+    -- Calculate percent of global gdp
+    SUM(gdp) / SUM(SUM(gdp)) OVER () AS perc_global_gdp,
+    -- Calculate percent of gdp relative to its region
+    SUM(gdp) / SUM(SUM(gdp)) OVER (PARTITION BY region) AS perc_region_gdp
+FROM country_stats AS cs
+JOIN countries AS c
+ON cs.country_id = c.id
+-- Filter out null gdp values
+WHERE gdp IS NOT NULL
+GROUP BY region, country
+-- Show the highest country_gdp at the top
+ORDER BY country_gdp DESC;
 {% endhighlight %}
 
 
 {% highlight SQL %}
-
+SELECT 
+	-- Pull in date and weekly_avg
+	date,
+    weekly_avg,
+    -- Output the value of weekly_avg from 7 days prior
+    LAG(weekly_avg,7) OVER (ORDER BY date) AS weekly_avg_previous,
+    -- Calculate percent change vs previous period
+    weekly_avg / (LAG(weekly_avg,7) OVER (ORDER BY date)) - 1 AS perc_change
+FROM
+  (SELECT
+      -- Pull in date and daily_views
+      date,
+      SUM(views) AS daily_views,
+      -- Calculate the rolling 7 day average
+      AVG(SUM(views)) OVER (ORDER BY date ROWS BETWEEN 6 PRECEDING AND CURRENT ROW) AS weekly_avg
+  FROM web_data
+  -- Alias as subquery
+  GROUP BY date) AS subquery
+-- Order by date in descending order
+ORDER BY date DESC;
 {% endhighlight %}
 
 
